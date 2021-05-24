@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/quite_nasty_1.wav-2b20bfcb6d5cab53fdad833db4d1ea98.sample"
+
+[deps]
+
+source_file="res://KrisSandbox/quite_nasty_1.wav"
+dest_files=[ "res://.import/quite_nasty_1.wav-2b20bfcb6d5cab53fdad833db4d1ea98.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
