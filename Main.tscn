@@ -1,64 +1,167 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://FintanSandbox/Testing/TestMover.tscn" type="PackedScene" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 113.465, 8.06494 )
+[ext_resource path="res://FintanSandbox/Testing/VertBord.png" type="Texture" id=2]
+[ext_resource path="res://FintanSandbox/Testing/Ground.png" type="Texture" id=3]
+[ext_resource path="res://FintanSandbox/Testing/sideBord.png" type="Texture" id=4]
+[ext_resource path="res://FintanSandbox/Testing/Dawn.png" type="Texture" id=5]
 
 [node name="Main" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 160, 56 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-rotation = -3.14159
-shape = SubResource( 1 )
-one_way_collision = true
-
-[node name="icon" type="Sprite" parent="StaticBody2D/CollisionShape2D"]
-position = Vector2( 1.41422, -0.267029 )
-scale = Vector2( 3.53516, 0.251627 )
-texture = ExtResource( 2 )
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="."]
-position = Vector2( 160, 184 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-shape = SubResource( 1 )
-one_way_collision = true
-
-[node name="icon" type="Sprite" parent="StaticBody2D4/CollisionShape2D"]
-position = Vector2( 1.41422, -0.267029 )
-scale = Vector2( 3.53516, 0.251627 )
-texture = ExtResource( 2 )
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2( 40, 120 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-rotation = 1.5708
-shape = SubResource( 1 )
-one_way_collision = true
-
-[node name="icon" type="Sprite" parent="StaticBody2D2/CollisionShape2D"]
-position = Vector2( 1.41422, -0.267029 )
-scale = Vector2( 3.53516, 0.251627 )
-texture = ExtResource( 2 )
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2( 296, 120 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2( -16, 0 )
-rotation = -1.5708
-shape = SubResource( 1 )
-one_way_collision = true
-
-[node name="icon" type="Sprite" parent="StaticBody2D3/CollisionShape2D"]
-position = Vector2( 1.41422, -0.267029 )
-scale = Vector2( 3.53516, 0.251627 )
-texture = ExtResource( 2 )
+[node name="Dawn" type="Sprite" parent="."]
+position = Vector2( -24, -8 )
+texture = ExtResource( 5 )
+centered = false
 
 [node name="TestMover" parent="." instance=ExtResource( 1 )]
-position = Vector2( 96, 16 )
+position = Vector2( 88, 152 )
+
+[node name="Ground" type="Sprite" parent="."]
+position = Vector2( 16, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground2" type="Sprite" parent="."]
+position = Vector2( 24, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground3" type="Sprite" parent="."]
+position = Vector2( 32, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground4" type="Sprite" parent="."]
+position = Vector2( 40, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground5" type="Sprite" parent="."]
+position = Vector2( 48, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground6" type="Sprite" parent="."]
+position = Vector2( 56, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground7" type="Sprite" parent="."]
+position = Vector2( 64, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground8" type="Sprite" parent="."]
+position = Vector2( 72, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground9" type="Sprite" parent="."]
+position = Vector2( 80, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground10" type="Sprite" parent="."]
+position = Vector2( 88, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground11" type="Sprite" parent="."]
+position = Vector2( 96, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground12" type="Sprite" parent="."]
+position = Vector2( 104, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground13" type="Sprite" parent="."]
+position = Vector2( 112, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground14" type="Sprite" parent="."]
+position = Vector2( 120, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground15" type="Sprite" parent="."]
+position = Vector2( 128, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground16" type="Sprite" parent="."]
+position = Vector2( 136, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground17" type="Sprite" parent="."]
+position = Vector2( 144, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground18" type="Sprite" parent="."]
+position = Vector2( 152, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground19" type="Sprite" parent="."]
+position = Vector2( 160, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground20" type="Sprite" parent="."]
+position = Vector2( 168, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground21" type="Sprite" parent="."]
+position = Vector2( 176, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground22" type="Sprite" parent="."]
+position = Vector2( 184, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground23" type="Sprite" parent="."]
+position = Vector2( 192, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground24" type="Sprite" parent="."]
+position = Vector2( 200, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground25" type="Sprite" parent="."]
+position = Vector2( 208, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground26" type="Sprite" parent="."]
+position = Vector2( 216, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground27" type="Sprite" parent="."]
+position = Vector2( 224, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Ground28" type="Sprite" parent="."]
+position = Vector2( 232, 160 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="VertBord" type="Sprite" parent="."]
+position = Vector2( -24, -8 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="sideBord" type="Sprite" parent="."]
+position = Vector2( -24, -8 )
+texture = ExtResource( 4 )
+centered = false

@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://TitleScreen/text.tres" type="Theme" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 40, 8 )
+
+[node name="TitleScreen" type="Node2D"]
+
+[node name="NewGame" type="StaticBody2D" parent="."]
+position = Vector2( 63, 149 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NewGame"]
+shape = SubResource( 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NewGame/CollisionShape2D"]
+margin_left = -36.0
+margin_top = -8.0
+margin_right = 60.0
+margin_bottom = 16.0
+theme = ExtResource( 1 )
+text = "Start Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
