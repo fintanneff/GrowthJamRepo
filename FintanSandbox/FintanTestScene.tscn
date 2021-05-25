@@ -16,6 +16,7 @@ extents = Vector2( 112, 8 )
 [node name="Mockup" type="Node2D" parent="."]
 
 [node name="Dawn" type="Sprite" parent="Mockup"]
+visible = false
 position = Vector2( -24, -8 )
 texture = ExtResource( 2 )
 centered = false
