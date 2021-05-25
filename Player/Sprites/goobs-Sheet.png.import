@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dawn.png-21cdc9bee7fbeccd779a306d23bf6e31.stex"
+path="res://.import/goobs-Sheet.png-f569aad297bfd475280c18e0d885f026.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FintanSandbox/Testing/Dawn.png"
-dest_files=[ "res://.import/Dawn.png-21cdc9bee7fbeccd779a306d23bf6e31.stex" ]
+source_file="res://Player/Sprites/goobs-Sheet.png"
+dest_files=[ "res://.import/goobs-Sheet.png-f569aad297bfd475280c18e0d885f026.stex" ]
 
 [params]
 
