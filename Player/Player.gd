@@ -4,7 +4,7 @@ extends KinematicBody2D
 var moveSpeed = 1
 var angle = Vector2(0,0)
 var inputVector = Vector2(0,0)
-var animationState = 0
+var midshot = false
 
 onready var animator = $AnimationPlayer
 onready var sprite = $Sprite
@@ -14,9 +14,14 @@ onready var bullet = preload("res://Bullet/Bullet.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	animator.play("Idle", -1, 1, false) 
-	pass 
-
-
+	pass
+	
+func animation_done(anim_name):
+	midshot = false
+	
+func try_animate(anim):
+	if (!midshot):
+		animator.play(anim, -1, 1, false)
 
 func _physics_process(delta):
 	#Finding Controller Inputs
@@ -29,20 +34,21 @@ func _physics_process(delta):
 	#Movement Functionality
 	if(abs(inputVector.x) > 0.5 && !Input.is_action_pressed("ui_hold")):
 		if(inputVector.y < -.4):
-			animator.play("WalkLeftAngled", -1, 1, false)
+			try_animate("WalkLeftAngled")
 			angle = Vector2(sign(inputVector.x), -1)
 		else:
-			animator.play("WalkLeft", -1, 1, false)
+			try_animate("WalkLeft")
 			angle = Vector2(sign(inputVector.x), 0)
 		move_and_collide(sign(inputVector.x) * Vector2.RIGHT * moveSpeed)
 	else:
 		if (inputVector.y < -.6 && abs(inputVector.x) < 0.5):
-			animator.play("UpIdle", -1, 1, false)
+			try_animate("UpIdle")
 			angle = Vector2(0, -1)
 		elif (inputVector.y < -.4):
-			animator.play("AngleIdle", -1, 1, false)
+			try_animate("AngleIdle")
+			angle = Vector2(-sprite.scale.x, -1)
 		else:
-			animator.play("Idle", -1, 1, false)
+			try_animate("Idle")
 			angle = Vector2(-sprite.scale.x, 0)
 			
 	#Shooting
@@ -51,5 +57,12 @@ func _physics_process(delta):
 		var newbullet = bullet.instance()
 		newbullet.transform.origin.x = transform.origin.x
 		newbullet.transform.origin.y = transform.origin.y
-		newbullet.angleshot(angle.normalized() * 4, 0)
+		newbullet.angleshot(angle.normalized() * 3, 0)
 		get_parent().add_child(newbullet)
+		midshot = true
+		if (angle.y < -.4 && abs(inputVector.x) > 0.5):
+			animator.play("AngleShoot", -1, 1, false)
+		elif (angle.y < -.4):
+			animator.play("UpShoot", -1, 1, false)
+		else:
+			animator.play("LeftShoot", -1, 1, false)

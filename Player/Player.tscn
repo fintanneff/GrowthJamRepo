@@ -159,7 +159,7 @@ position = Vector2( 0, -1 )
 z_index = 2
 texture = ExtResource( 1 )
 hframes = 9
-frame = 5
+frame = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/AngleIdle = SubResource( 10 )
@@ -171,3 +171,5 @@ anims/UpShoot = SubResource( 5 )
 anims/WalkLeft = SubResource( 6 )
 anims/WalkLeftAngled = SubResource( 7 )
 anims/WalkLeftUp = SubResource( 8 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="animation_done"]
