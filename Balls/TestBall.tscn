@@ -16,9 +16,11 @@ radius = 8.0
 [node name="TestBall" type="RigidBody2D"]
 physics_material_override = SubResource( 1 )
 gravity_scale = 0.0
+contacts_reported = 1
+contact_monitor = true
 can_sleep = false
 linear_velocity = Vector2( 50, -50 )
-linear_damp = 0.1
+linear_damp = 0.5
 script = ExtResource( 2 )
 
 [node name="CShape" type="CollisionShape2D" parent="."]
@@ -35,4 +37,5 @@ shape = SubResource( 3 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
 
+[connection signal="body_entered" from="." to="." method="_on_TestBall_body_entered"]
 [connection signal="area_entered" from="BulletZone" to="." method="_on_BulletZone_area_entered"]

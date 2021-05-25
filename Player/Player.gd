@@ -24,6 +24,12 @@ func try_animate(anim):
 		animator.play(anim, -1, 1, false)
 
 func _physics_process(delta):
+	#Wrap screen
+	if (transform.origin.x < -6):
+		transform.origin.x = 256 + 5
+	if (transform.origin.x > 256 + 6):
+		transform.origin.x = -5
+	
 	#Finding Controller Inputs
 	inputVector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	inputVector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
@@ -53,7 +59,6 @@ func _physics_process(delta):
 			
 	#Shooting
 	if (Input.is_action_just_pressed("ui_shoot")):
-		print("Shoot!")
 		var newbullet = bullet.instance()
 		newbullet.transform.origin.x = transform.origin.x
 		newbullet.transform.origin.y = transform.origin.y
