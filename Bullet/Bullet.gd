@@ -4,6 +4,8 @@ var vel = Vector2.ZERO
 var rot = 0.0
 var dedtimer = 60
 
+onready var hit = $Hit
+
 func _physics_process(delta):
 	if (dedtimer <= 0):
 		queue_free()
@@ -15,3 +17,7 @@ func _physics_process(delta):
 func angleshot(v, r):
 	vel = v
 	rot = r
+
+
+func _on_Bullet_body_entered(body):
+	print("Something was hit!")
