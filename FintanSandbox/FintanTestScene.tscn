@@ -179,6 +179,7 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="sideBord" type="Sprite" parent="Mockup"]
+visible = false
 position = Vector2( -24, -8 )
 z_index = 10
 texture = ExtResource( 3 )
@@ -205,6 +206,7 @@ rotation = 1.5708
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 rotation = 3.14159
 shape = SubResource( 1 )
+disabled = true
 one_way_collision = true
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
@@ -213,22 +215,23 @@ rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 shape = SubResource( 1 )
+disabled = true
 one_way_collision = true
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( 112, 154 )
 
 [node name="TestBall" parent="." instance=ExtResource( 4 )]
-position = Vector2( 81, 88 )
+position = Vector2( 62, -98 )
 
 [node name="TestBall2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 55, 62 )
+position = Vector2( 54, -23 )
 
 [node name="TestBall3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 202, 39 )
+position = Vector2( 170, -98 )
 
 [node name="TestBall4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 140, 44 )
+position = Vector2( 129, -53 )
 
 [node name="TestBall5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 198, 122 )
+position = Vector2( 172, -44 )
