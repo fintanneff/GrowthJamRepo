@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://FintanSandbox/Testing/Ground.png" type="Texture" id=1]
-[ext_resource path="res://FintanSandbox/Testing/Dawn.png" type="Texture" id=2]
+[ext_resource path="res://TitleScreen/text.tres" type="Theme" id=2]
 [ext_resource path="res://FintanSandbox/Testing/sideBord.png" type="Texture" id=3]
 [ext_resource path="res://Balls/TestBall.tscn" type="PackedScene" id=4]
 [ext_resource path="res://FintanSandbox/Testing/VertBord.png" type="Texture" id=5]
@@ -15,22 +15,16 @@ extents = Vector2( 244, 8 )
 [node name="Main" type="Node2D"]
 
 [node name="StarryDawn" type="Sprite" parent="."]
-position = Vector2( -24, -8 )
+position = Vector2( -22, -8 )
 texture = ExtResource( 8 )
 centered = false
 
 [node name="clouds" type="Sprite" parent="."]
-position = Vector2( -24, -8 )
+position = Vector2( -22, -8 )
 texture = ExtResource( 9 )
 centered = false
 
 [node name="Mockup" type="Node2D" parent="."]
-
-[node name="Dawn" type="Sprite" parent="Mockup"]
-visible = false
-position = Vector2( -24, -8 )
-texture = ExtResource( 2 )
-centered = false
 
 [node name="Ground" type="Sprite" parent="Mockup"]
 position = Vector2( 16, 160 )
@@ -173,14 +167,13 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="VertBord" type="Sprite" parent="Mockup"]
-position = Vector2( -24, -8 )
+position = Vector2( -22, -8 )
 z_index = 10
 texture = ExtResource( 5 )
 centered = false
 
 [node name="sideBord" type="Sprite" parent="Mockup"]
-visible = false
-position = Vector2( -24, -8 )
+position = Vector2( -22, -8 )
 z_index = 10
 texture = ExtResource( 3 )
 centered = false
@@ -200,22 +193,20 @@ shape = SubResource( 1 )
 one_way_collision = true
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2( 248, 64 )
+position = Vector2( 244, 65 )
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 rotation = 3.14159
 shape = SubResource( 1 )
-disabled = true
 one_way_collision = true
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2( 8, 64 )
+position = Vector2( 12, 64 )
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 shape = SubResource( 1 )
-disabled = true
 one_way_collision = true
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
@@ -235,3 +226,16 @@ position = Vector2( 129, -53 )
 
 [node name="TestBall5" parent="." instance=ExtResource( 4 )]
 position = Vector2( 172, -44 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 24.0
+margin_top = 18.0
+margin_right = 132.0
+margin_bottom = 35.0
+theme = ExtResource( 2 )
+text = "3409856
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
