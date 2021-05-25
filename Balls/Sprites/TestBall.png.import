@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BALL.png-6a832438e4c1aa1bc8a41ca77e717398.stex"
+path="res://.import/TestBall.png-6a15dd3629425a962e1fe2d8ec583897.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FintanSandbox/Testing/BALL.png"
-dest_files=[ "res://.import/BALL.png-6a832438e4c1aa1bc8a41ca77e717398.stex" ]
+source_file="res://Balls/Sprites/TestBall.png"
+dest_files=[ "res://.import/TestBall.png-6a15dd3629425a962e1fe2d8ec583897.stex" ]
 
 [params]
 
