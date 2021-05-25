@@ -17,7 +17,3 @@ func _physics_process(delta):
 func angleshot(v, r):
 	vel = v
 	rot = r
-
-
-func _on_Bullet_body_entered(body):
-	print("Something was hit!")
