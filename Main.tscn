@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://FintanSandbox/Testing/VertBord.png" type="Texture" id=2]
 [ext_resource path="res://FintanSandbox/Testing/Ground.png" type="Texture" id=3]
 [ext_resource path="res://FintanSandbox/Testing/sideBord.png" type="Texture" id=4]
@@ -164,3 +165,5 @@ centered = false
 position = Vector2( -24, -8 )
 texture = ExtResource( 4 )
 centered = false
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
