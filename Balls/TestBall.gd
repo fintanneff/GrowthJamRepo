@@ -33,8 +33,8 @@ func _on_BulletZone_area_entered(area):
 	linear_velocity *= 0.6
 	linear_velocity += area.vel.rotated(area.rot) * 15
 	iscale += Vector2.ONE * 0.1
-	cshape.scale += Vector2.ONE * 0.1
-	bzone.scale += Vector2.ONE * 0.1
+	cshape.scale += Vector2.ONE * 0.25
+	bzone.scale += Vector2.ONE * 0.25
 	ballgraphic.scale *= 1.3
 	if (iscale.x >= 0.8):
 		queue_free()

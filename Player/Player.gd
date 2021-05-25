@@ -71,3 +71,7 @@ func _physics_process(delta):
 			animator.play("UpShoot", -1, 1, false)
 		else:
 			animator.play("LeftShoot", -1, 1, false)
+
+
+func _on_Area2D_body_entered(body):
+	queue_free()
