@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Balls/Sprites/bully_balloon_red-Sheet.png" type="Texture" id=1]
-[ext_resource path="res://Balls/TestBall.gd" type="Script" id=2]
+[ext_resource path="res://Balls/BallBase.gd" type="Script" id=2]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
@@ -30,7 +30,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 0, 3 ]
 }
 
-[node name="TestBall" type="RigidBody2D"]
+[node name="BullyBall" type="RigidBody2D"]
 collision_layer = 9
 physics_material_override = SubResource( 1 )
 gravity_scale = 0.0
@@ -38,8 +38,11 @@ contacts_reported = 1
 contact_monitor = true
 can_sleep = false
 linear_velocity = Vector2( 50, -50 )
-linear_damp = 0.5
+linear_damp = 0.6
 script = ExtResource( 2 )
+graphic_pixel_size = 64
+speed_min = 10.0
+speed_max = 110.0
 
 [node name="CShape" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )

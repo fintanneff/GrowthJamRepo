@@ -1,6 +1,9 @@
 extends RigidBody2D
 
-var graphic_pixel_size = 64
+export(int) var graphic_pixel_size
+export(bool) var does_explode
+export(float) var speed_min
+export(float) var speed_max
 
 onready var ballgraphic = $TestBall
 onready var cshape = $CShape
@@ -24,9 +27,9 @@ func _physics_process(delta):
 		transform.origin.x = -realsize + 2
 	angular_velocity = 0
 	ballgraphic.scale = lerp(ballgraphic.scale, iscale, delta*3)
-	if (linear_velocity.length() < 30):
+	if (linear_velocity.length() < speed_min):
 		linear_velocity *= 1.1
-	elif (linear_velocity.length() > 150):
+	elif (linear_velocity.length() > speed_max):
 		linear_velocity *= 0.9
 	pass
 
