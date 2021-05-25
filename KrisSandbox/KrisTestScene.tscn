@@ -1,19 +1,29 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://FintanSandbox/Testing/VertBord.png" type="Texture" id=2]
-[ext_resource path="res://FintanSandbox/Testing/sideBord.png" type="Texture" id=3]
-[ext_resource path="res://FintanSandbox/Testing/Dawn.png" type="Texture" id=4]
+[ext_resource path="res://Balls/TestBall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameScreen/clouds.png" type="Texture" id=3]
+[ext_resource path="res://FintanSandbox/Testing/VertBord.png" type="Texture" id=4]
 [ext_resource path="res://FintanSandbox/Testing/Ground.png" type="Texture" id=5]
+[ext_resource path="res://FintanSandbox/Testing/sideBord.png" type="Texture" id=6]
+[ext_resource path="res://GameScreen/StarryDawn.png" type="Texture" id=7]
 
-[node name="KrisTest" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 244, 8 )
+
+[node name="Main" type="Node2D"]
+
+[node name="StarryDawn" type="Sprite" parent="."]
+position = Vector2( -22, -8 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="clouds" type="Sprite" parent="."]
+position = Vector2( -22, -8 )
+texture = ExtResource( 3 )
+centered = false
 
 [node name="Mockup" type="Node2D" parent="."]
-
-[node name="Dawn" type="Sprite" parent="Mockup"]
-position = Vector2( -24, -8 )
-texture = ExtResource( 4 )
-centered = false
 
 [node name="Ground" type="Sprite" parent="Mockup"]
 position = Vector2( 16, 160 )
@@ -156,14 +166,62 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="VertBord" type="Sprite" parent="Mockup"]
-position = Vector2( -24, -8 )
-texture = ExtResource( 2 )
+position = Vector2( -22, -8 )
+z_index = 10
+texture = ExtResource( 4 )
 centered = false
 
 [node name="sideBord" type="Sprite" parent="Mockup"]
-position = Vector2( -24, -8 )
-texture = ExtResource( 3 )
+position = Vector2( -22, -8 )
+z_index = 10
+texture = ExtResource( 6 )
 centered = false
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 128, 168 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( 128, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+rotation = 3.14159
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 244, 65 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+rotation = 3.14159
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 12, 64 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource( 1 )
+one_way_collision = true
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 121, 154 )
+position = Vector2( 112, 154 )
+
+[node name="TestBall" parent="." instance=ExtResource( 2 )]
+position = Vector2( 62, -98 )
+
+[node name="TestBall2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 54, -23 )
+
+[node name="TestBall3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 170, -98 )
+
+[node name="TestBall4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 129, -53 )
+
+[node name="TestBall5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 172, -44 )

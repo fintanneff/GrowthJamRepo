@@ -12,6 +12,8 @@ func _ready():
 	linear_velocity.x = rand_range(-200, 200)
 	linear_velocity.y = 200
 	iscale = ballgraphic.scale
+	
+	
 	pass
 
 func _physics_process(delta):
