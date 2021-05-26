@@ -14,6 +14,10 @@ config/name="Growth"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+ScoreTracker="*res://GameScreen/ScoreTracker.tscn"
+
 [display]
 
 window/size/width=256

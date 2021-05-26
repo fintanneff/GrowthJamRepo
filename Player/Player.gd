@@ -38,6 +38,8 @@ func _physics_process(delta):
 		sprite.scale.x = sign(-inputVector.x)
 	
 	#Movement Functionality
+	ScoreTracker.player_last_x = transform.origin.x
+	ScoreTracker.player_last_y = transform.origin.y
 	if(abs(inputVector.x) > 0.5 && !Input.is_action_pressed("ui_hold")):
 		if(inputVector.y < -.4):
 			try_animate("WalkLeftAngled")

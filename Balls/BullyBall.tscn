@@ -8,10 +8,10 @@ friction = 0.0
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 8.0
+radius = 32.0624
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 8.0
+radius = 32.1403
 
 [sub_resource type="Animation" id=4]
 resource_name = "idle"
@@ -43,8 +43,13 @@ script = ExtResource( 2 )
 graphic_pixel_size = 64
 speed_min = 10.0
 speed_max = 110.0
+pop_cloud_size = Vector2( 1.4, 1.4 )
+pop_cloud_duration = 20.0
+pop_cloud_speed = 2.2
+pop_bang_size = Vector2( 3, 3 )
 
 [node name="CShape" type="CollisionShape2D" parent="."]
+scale = Vector2( 0.25, 0.25 )
 shape = SubResource( 2 )
 
 [node name="BulletZone" type="Area2D" parent="."]
@@ -52,6 +57,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BulletZone"]
+scale = Vector2( 0.25, 0.25 )
 shape = SubResource( 3 )
 
 [node name="TestBall" type="Sprite" parent="."]

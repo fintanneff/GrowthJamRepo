@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://TitleScreen/text.tres" type="Theme" id=1]
+[ext_resource path="res://GameScreen/ScoreNumber.gd" type="Script" id=2]
+
+[node name="ScoreNumber" type="RichTextLabel"]
+margin_right = 128.0
+margin_bottom = 16.0
+theme = ExtResource( 1 )
+scroll_active = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
