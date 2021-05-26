@@ -26,7 +26,7 @@ func _physics_process(delta):
 	if (transform.origin.x > 256 + realsize):
 		transform.origin.x = -realsize + 2
 	angular_velocity = 0
-	ballgraphic.scale = lerp(ballgraphic.scale, iscale, delta*3)
+	ballgraphic.scale = lerp(ballgraphic.scale, iscale, delta*6)
 	if (linear_velocity.length() < speed_min):
 		linear_velocity *= 1.1
 	elif (linear_velocity.length() > speed_max):
@@ -38,13 +38,23 @@ func _on_BulletZone_area_entered(area):
 	linear_velocity *= 0.6
 	linear_velocity += area.vel.rotated(area.rot) * 15
 	iscale += Vector2.ONE * 0.1
-	cshape.scale += Vector2.ONE * 0.25
-	bzone.scale += Vector2.ONE * 0.25
+	cshape.scale += Vector2.ONE * 0.5
+	bzone.scale += Vector2.ONE * 0.5
 	ballgraphic.scale *= 1.3
 	if (iscale.x >= 0.8):
 		queue_free()
+		if (does_explode):
+			starexplode()
 
 
 func _on_TestBall_body_entered(body):
 	ballgraphic.scale *= 1.05
 	linear_velocity *= 1.2
+	
+func starexplode():
+	for i in get_parent().get_children():
+		if i.has_method("react_to_star_explode"):
+			i.react_to_star_explode()
+			
+func react_to_star_explode():
+	queue_free()
