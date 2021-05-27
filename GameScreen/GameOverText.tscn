@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://TitleScreen/text.tres" type="Theme" id=1]
+[ext_resource path="res://GameScreen/GameOverText.gd" type="Script" id=2]
+
+[node name="GameOverText" type="Node2D"]
+z_index = 100
+script = ExtResource( 2 )
+
+[node name="Txt" type="RichTextLabel" parent="."]
+margin_left = 96.0
+margin_top = 75.0
+margin_right = 171.0
+margin_bottom = 176.0
+theme = ExtResource( 1 )
+text = "Game Over"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Txt2" type="RichTextLabel" parent="."]
+margin_left = 93.0
+margin_top = 91.0
+margin_right = 216.0
+margin_bottom = 122.0
+theme = ExtResource( 1 )
+text = "(Press Enter)"
+__meta__ = {
+"_edit_use_anchors_": false
+}

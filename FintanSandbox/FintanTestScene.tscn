@@ -269,11 +269,11 @@ one_way_collision = true
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( 195, 154 )
 
-[node name="ScoreNumber" parent="." instance=ExtResource( 2 )]
-margin_left = 24.0
-margin_top = 16.0
-margin_right = 152.0
-margin_bottom = 32.0
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 24, 16 )
+z_index = 100
+
+[node name="ScoreNumber" parent="Node2D" instance=ExtResource( 2 )]
 text = "0"
 
 [node name="SmallBall" parent="." instance=ExtResource( 5 )]

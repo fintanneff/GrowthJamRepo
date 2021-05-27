@@ -17,6 +17,7 @@ var max_balls = 10
 
 var player_last_x = 0
 var player_last_y = 0
+var player_dead = false
 
 onready var small_balloon = preload("res://Balls/SmallBall.tscn")
 onready var med_balloon = preload("res://Balls/BullyBall.tscn")
@@ -40,6 +41,7 @@ func set_me_up():
 	updatable.clear()
 	misc_balls.clear()
 	current_round.clear()
+	player_dead = false
 
 func roll_internal_d12():
 	internal_d12 = int(rand_range(1, 12))

@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 ScoreTracker="*res://GameScreen/ScoreTracker.tscn"
+ScreenFader="*res://GameScreen/ScreenFader.tscn"
 
 [display]
 

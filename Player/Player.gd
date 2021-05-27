@@ -10,9 +10,13 @@ onready var animator = $AnimationPlayer
 onready var sprite = $Sprite
 
 onready var bullet = preload("res://Bullet/Bullet.tscn")
+onready var corpse = preload("res://Bullet/Bullet.tscn")
+onready var gameovertext = preload("res://GameScreen/GameOverText.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	ScreenFader.hard_set_fade(1)
+	ScreenFader.set_ifade(0)
 	animator.play("Idle", -1, 1, false) 
 	pass
 	
@@ -76,5 +80,11 @@ func _physics_process(delta):
 
 
 func _on_Area2D_body_entered(body):
-	ScoreTracker.set_me_up()
-	get_tree().reload_current_scene()
+	#ScoreTracker.set_me_up()
+	#get_tree().reload_current_scene()
+	queue_free()
+	ScreenFader.set_ifade(0.7)
+	ScoreTracker.player_dead = true
+	var newtext = gameovertext.instance()
+	get_parent().add_child(newtext)
+	pass
