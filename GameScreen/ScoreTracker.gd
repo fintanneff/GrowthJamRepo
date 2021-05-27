@@ -8,9 +8,12 @@ var current_round = []
 var misc_balls = []
 #---------
 var misc_ball_countdown = -1
-var misc_ball_reset_time = 200
+var misc_ball_reset_time = 160
 var round_ball_countdown = -1
 var round_ball_reset_time = 1000
+
+var round_volume = 5
+var max_balls = 15
 
 var player_last_x = 0
 var player_last_y = 0
@@ -53,16 +56,22 @@ func increase_score(s):
 		begin_misc_ball_timer()
 	if (round_ball_countdown == -1 && score >= 500):
 		begin_round_timer()
-	if (score >= 30000):
-		pass
-	elif (score >= 30000):
-		pass
-	elif (score >= 30000):
-		pass
+	if (score >= 10000):
+		misc_ball_reset_time = 125
+		round_ball_reset_time = 700
+		max_balls = 17
+		round_volume = 7
+	elif (score >= 5000):
+		round_ball_reset_time = 800
+		max_balls = 16
+		round_volume = 6
+	elif (score >= 1000):
+		misc_ball_reset_time = 150
+		round_volume = 5
 
 #Called from balloons when they try to add themselved to the current round
 func spawn_check(b, part_of_round):
-	if (current_round.size() + misc_balls.size() < 20):
+	if (current_round.size() + misc_balls.size() < max_balls):
 		if (part_of_round):
 			current_round.push_front(b)
 		else:
@@ -85,7 +94,7 @@ func pop_check(b):
 func misc_ball_spawn():
 	var newball
 	roll_internal_d12()
-	if (internal_d12 >= 11):
+	if (internal_d12 >= 10):
 		if (score >= 5000):
 			newball = large_balloon.instance()
 		else:
@@ -105,9 +114,17 @@ func misc_ball_spawn():
 
 #Called every new round (when all balloons have been popped)
 func new_round():
-	print("NEW ROUND!")
-	for i in range(5):
-		var newball = small_balloon.instance()
+	#print("NEW ROUND!")
+	for i in range(round_volume):
+		var newball
+		roll_internal_d12()
+		if (internal_d12 >= 8):
+			if (score >= 10000):
+				newball = med_balloon.instance()
+			else:
+				newball = small_balloon.instance()
+		else:
+			newball = small_balloon.instance()
 		var worked = spawn_check(newball, true)
 		if (worked):
 			newball.transform.origin.x = rand_range(32, 224)
