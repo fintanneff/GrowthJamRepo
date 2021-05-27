@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Balls/BullyBall.tscn" type="PackedScene" id=2]
@@ -8,19 +8,47 @@
 [ext_resource path="res://GameScreen/NEWESTEST_SIDE.png" type="Texture" id=6]
 [ext_resource path="res://GameScreen/StarryDawn.png" type="Texture" id=7]
 [ext_resource path="res://Balls/StarBall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://GameScreen/BackGround/FloatingCity.png" type="Texture" id=9]
+[ext_resource path="res://GameScreen/BackGround/smolScrappers.png" type="Texture" id=10]
+[ext_resource path="res://GameScreen/BackGround/Planet.png" type="Texture" id=11]
+[ext_resource path="res://GameScreen/BackGround/laturn.png" type="Texture" id=12]
+[ext_resource path="res://GameScreen/BackGround/castle.png" type="Texture" id=13]
+[ext_resource path="res://GameScreen/BackGround/SkyScrapper.png" type="Texture" id=14]
+[ext_resource path="res://GameScreen/BackGround/Dome.png" type="Texture" id=15]
+[ext_resource path="res://GameScreen/BackGround/smilling_friend.png" type="Texture" id=16]
+[ext_resource path="res://GameScreen/BackGround/ufo.png" type="Texture" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 244, 8 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "fly by"
+length = 60.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ufo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 1.6, 30, 31.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -62, 172 ), Vector2( 234, 172 ), Vector2( 210, 80 ), Vector2( 210, 80 ), Vector2( -75, 80 ) ]
+}
 
 [node name="Main" type="Node2D"]
 
 [node name="StarryDawn" type="Sprite" parent="."]
 position = Vector2( -22, -8 )
+z_index = -20
 texture = ExtResource( 7 )
 centered = false
 
 [node name="clouds" type="Sprite" parent="."]
 position = Vector2( -22, -8 )
+z_index = -2
 texture = ExtResource( 3 )
 centered = false
 
@@ -230,3 +258,59 @@ position = Vector2( 130, 92 )
 z_index = 10
 z_as_relative = false
 texture = ExtResource( 4 )
+
+[node name="Planet" type="Sprite" parent="."]
+position = Vector2( 137, 92 )
+z_index = -10
+texture = ExtResource( 11 )
+
+[node name="laturn2" type="Sprite" parent="."]
+position = Vector2( -4, 111 )
+z_index = -2
+texture = ExtResource( 12 )
+
+[node name="laturn" type="Sprite" parent="."]
+position = Vector2( 169, 108 )
+z_index = -1
+texture = ExtResource( 12 )
+
+[node name="smolScrappers" type="Sprite" parent="."]
+position = Vector2( 128, 90 )
+z_index = -7
+texture = ExtResource( 10 )
+
+[node name="SkyScrapper" type="Sprite" parent="."]
+position = Vector2( 128, 93 )
+z_index = -6
+texture = ExtResource( 14 )
+
+[node name="castle" type="Sprite" parent="."]
+position = Vector2( 125, 93 )
+z_index = -4
+texture = ExtResource( 13 )
+
+[node name="smilling_friend" type="Sprite" parent="."]
+position = Vector2( 127, 91 )
+z_index = -9
+texture = ExtResource( 16 )
+
+[node name="FloatingCity" type="Sprite" parent="."]
+position = Vector2( 128, 93 )
+z_index = -8
+texture = ExtResource( 9 )
+
+[node name="Dome" type="Sprite" parent="."]
+position = Vector2( 115, 90 )
+z_index = -5
+texture = ExtResource( 15 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="ufo" type="Sprite" parent="Node2D"]
+position = Vector2( -43.3338, 80 )
+z_index = -6
+texture = ExtResource( 17 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+autoplay = "fly by"
+"anims/fly by" = SubResource( 2 )
