@@ -1,13 +1,11 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Balls/BullyBall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GameScreen/clouds.png" type="Texture" id=3]
 [ext_resource path="res://GameScreen/newUpDownBord.png" type="Texture" id=4]
 [ext_resource path="res://FintanSandbox/Testing/Ground.png" type="Texture" id=5]
 [ext_resource path="res://GameScreen/NEWESTEST_SIDE.png" type="Texture" id=6]
 [ext_resource path="res://GameScreen/StarryDawn.png" type="Texture" id=7]
-[ext_resource path="res://Balls/StarBall.tscn" type="PackedScene" id=8]
 [ext_resource path="res://GameScreen/BackGround/FloatingCity.png" type="Texture" id=9]
 [ext_resource path="res://GameScreen/BackGround/smolScrappers.png" type="Texture" id=10]
 [ext_resource path="res://GameScreen/BackGround/Planet.png" type="Texture" id=11]
@@ -227,24 +225,6 @@ one_way_collision = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 112, 154 )
-
-[node name="TestBall" parent="." instance=ExtResource( 2 )]
-position = Vector2( 62, -98 )
-
-[node name="TestBall2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 54, -23 )
-
-[node name="TestBall3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 170, -98 )
-
-[node name="TestBall4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 129, -53 )
-
-[node name="TestBall5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 172, -44 )
-
-[node name="BullyBall" parent="." instance=ExtResource( 8 )]
-position = Vector2( 83.3381, -29.1053 )
 
 [node name="NEWESTEST_SIDE" type="Sprite" parent="."]
 position = Vector2( 129, 92 )
