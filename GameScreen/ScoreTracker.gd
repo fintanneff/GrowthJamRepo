@@ -2,9 +2,15 @@ extends Node2D
 
 var score = 0
 var updatable = []
+#---------
+#ARRAYS FOR BALLS!!!
 var current_round = []
 var misc_balls = []
-var misc_ball_countdown = 200
+#---------
+var misc_ball_countdown = -1
+var misc_ball_reset_time = 200
+var round_ball_countdown = -1
+var round_ball_reset_time = 1000
 
 var player_last_x = 0
 var player_last_y = 0
@@ -13,18 +19,46 @@ onready var small_balloon = preload("res://Balls/SmallBall.tscn")
 onready var med_balloon = preload("res://Balls/BullyBall.tscn")
 onready var large_balloon = preload("res://Balls/StarBall.tscn")
 
+var internal_d12 = 1
+
+func roll_internal_d12():
+	internal_d12 = int(rand_range(1, 12))
+
 func _physics_process(delta):
-	if (misc_ball_countdown > 0):
-		misc_ball_countdown -= 1
-	else:
-		misc_ball_countdown = 200
-		misc_ball_spawn()
+	if (misc_ball_countdown != -1):
+		if (misc_ball_countdown > 0):
+			misc_ball_countdown -= 1
+		else:
+			misc_ball_countdown = misc_ball_reset_time
+			misc_ball_spawn()
+	if (round_ball_countdown != -1):
+		if (round_ball_countdown > 0):
+			round_ball_countdown -= 1
+		else:
+			round_ball_countdown = round_ball_reset_time
+			new_round()
+
+func begin_misc_ball_timer():
+	misc_ball_countdown = misc_ball_reset_time
+	
+func begin_round_timer():
+	round_ball_countdown = round_ball_reset_time
 
 func increase_score(s):
 	score += s
 	print(score)
 	for i in updatable:
 		i.on_score_update(score)
+	if (misc_ball_countdown == -1 && score >= 100):
+		begin_misc_ball_timer()
+	if (round_ball_countdown == -1 && score >= 500):
+		begin_round_timer()
+	if (score >= 30000):
+		pass
+	elif (score >= 30000):
+		pass
+	elif (score >= 30000):
+		pass
 
 #Called from balloons when they try to add themselved to the current round
 func spawn_check(b, part_of_round):
@@ -43,14 +77,26 @@ func pop_check(b):
 	var bpos = current_round.find(b, 0)
 	if (bpos != -1):
 		current_round.remove(bpos)
-		if (current_round.size() <= 0):
-			new_round()
 	else:
 		bpos = misc_balls.find(b, 0)
-		misc_balls.remove(bpos)
+		if (bpos != -1):
+			misc_balls.remove(bpos)
 	
 func misc_ball_spawn():
-	var newball = small_balloon.instance()
+	var newball
+	roll_internal_d12()
+	if (internal_d12 >= 11):
+		if (score >= 5000):
+			newball = large_balloon.instance()
+		else:
+			newball = med_balloon.instance()
+	elif (internal_d12 >= 7):
+		if (score >= 500):
+			newball = med_balloon.instance()
+		else:
+			newball = small_balloon.instance()
+	else:
+		newball = small_balloon.instance()
 	var worked = spawn_check(newball, false)
 	if (worked):
 		newball.transform.origin.x = rand_range(32, 224)
@@ -60,7 +106,7 @@ func misc_ball_spawn():
 #Called every new round (when all balloons have been popped)
 func new_round():
 	print("NEW ROUND!")
-	for i in range(10):
+	for i in range(5):
 		var newball = small_balloon.instance()
 		var worked = spawn_check(newball, true)
 		if (worked):

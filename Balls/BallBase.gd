@@ -23,7 +23,7 @@ func _ready():
 	
 func set_me_up():
 	linear_velocity.x = rand_range(-200, 200)
-	linear_velocity.y = 200
+	linear_velocity.y = 100
 	iscale = ballgraphic.scale
 	cshape.scale = ballgraphic.scale
 	bzone.scale = ballgraphic.scale
@@ -40,7 +40,9 @@ func _physics_process(delta):
 		linear_velocity *= 1.1
 	elif (linear_velocity.length() > speed_max):
 		linear_velocity *= 0.9
-	pass
+	#To keep it from getting stuck in the top
+	if (transform.origin.y < 0):
+		linear_velocity.y = 200
 
 func _on_BulletZone_area_entered(area):
 	if (transform.origin.distance_squared_to(Vector2(ScoreTracker.player_last_x, ScoreTracker.player_last_y)) < 1000):
