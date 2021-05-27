@@ -49,7 +49,6 @@ func begin_round_timer():
 
 func increase_score(s):
 	score += s
-	print(score)
 	for i in updatable:
 		i.on_score_update(score)
 	if (misc_ball_countdown == -1 && score >= 100):

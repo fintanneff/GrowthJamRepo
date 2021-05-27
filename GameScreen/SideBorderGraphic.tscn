@@ -35,6 +35,7 @@ tracks/1/keys = {
 [node name="SideBorderGraphic" type="Node2D"]
 z_index = 10
 script = ExtResource( 3 )
+anim_name = "FallAway"
 
 [node name="leftbord" type="Sprite" parent="."]
 position = Vector2( 128, 92 )

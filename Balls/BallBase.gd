@@ -46,10 +46,10 @@ func _physics_process(delta):
 
 func _on_BulletZone_area_entered(area):
 	if (transform.origin.distance_squared_to(Vector2(ScoreTracker.player_last_x, ScoreTracker.player_last_y)) < 1000):
-		ScoreTracker.increase_score(10)
+		ScoreTracker.increase_score(15)
 		print("close hit!")
 	else:
-		ScoreTracker.increase_score(5)
+		ScoreTracker.increase_score(10)
 	area.queue_free()
 	linear_velocity *= 0.6
 	linear_velocity += area.vel.rotated(area.rot) * 15
