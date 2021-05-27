@@ -36,7 +36,7 @@ position = Vector2( 137, 92 )
 z_index = -10
 texture = ExtResource( 2 )
 script = ExtResource( 11 )
-score_limit = 500
+score_limit = 17000
 
 [node name="laturn2" type="Sprite" parent="."]
 position = Vector2( -4, 111 )
