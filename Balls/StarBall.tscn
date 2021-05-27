@@ -44,6 +44,7 @@ graphic_pixel_size = 96
 does_explode = true
 speed_min = 10.0
 speed_max = 110.0
+point_value = 150
 pop_cloud_size = Vector2( 2.1, 2.1 )
 pop_cloud_duration = 30.0
 pop_cloud_speed = 2.3

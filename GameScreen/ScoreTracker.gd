@@ -13,7 +13,7 @@ var round_ball_countdown = -1
 var round_ball_reset_time = 1000
 
 var round_volume = 5
-var max_balls = 15
+var max_balls = 10
 
 var player_last_x = 0
 var player_last_y = 0
@@ -23,6 +23,23 @@ onready var med_balloon = preload("res://Balls/BullyBall.tscn")
 onready var large_balloon = preload("res://Balls/StarBall.tscn")
 
 var internal_d12 = 1
+
+#func _ready():
+#	call_deferred("set_me_up")
+
+func set_me_up():
+	score = 0
+	misc_ball_countdown = -1
+	misc_ball_reset_time = 160
+	round_ball_countdown = -1
+	round_ball_reset_time = 1000
+	round_volume = 4
+	max_balls = 8
+	player_last_x = 0
+	player_last_y = 0
+	updatable.clear()
+	misc_balls.clear()
+	current_round.clear()
 
 func roll_internal_d12():
 	internal_d12 = int(rand_range(1, 12))
@@ -51,22 +68,40 @@ func increase_score(s):
 	score += s
 	for i in updatable:
 		i.on_score_update(score)
+	score_progress_table()
+
+func score_progress_table():
 	if (misc_ball_countdown == -1 && score >= 100):
 		begin_misc_ball_timer()
 	if (round_ball_countdown == -1 && score >= 500):
 		begin_round_timer()
-	if (score >= 10000):
+	if (score >= 30000):
+		misc_ball_reset_time = 30
+		round_ball_reset_time = 500
+		max_balls = 25
+		round_volume = 10
+	elif (score >= 25000):
+		misc_ball_reset_time = 50
+		round_ball_reset_time = 550
+	elif (score >= 20000):
+		misc_ball_reset_time = 70
+		round_ball_reset_time = 600
+		max_balls = 20
+	elif (score >= 15000):
+		misc_ball_reset_time = 100
+		round_ball_reset_time = 650
+		max_balls = 15
+	elif (score >= 10000):
 		misc_ball_reset_time = 125
 		round_ball_reset_time = 700
-		max_balls = 17
-		round_volume = 7
+		max_balls = 12
 	elif (score >= 5000):
 		round_ball_reset_time = 800
-		max_balls = 16
+		max_balls = 9
 		round_volume = 6
 	elif (score >= 1000):
 		misc_ball_reset_time = 150
-		round_volume = 5
+		round_volume = 4
 
 #Called from balloons when they try to add themselved to the current round
 func spawn_check(b, part_of_round):

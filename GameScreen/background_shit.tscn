@@ -43,60 +43,60 @@ position = Vector2( -4, 111 )
 z_index = -2
 texture = ExtResource( 5 )
 script = ExtResource( 11 )
-score_limit = 600
+score_limit = 1500
 
 [node name="laturn" type="Sprite" parent="."]
 position = Vector2( 169, 108 )
 z_index = -1
 texture = ExtResource( 5 )
 script = ExtResource( 11 )
-score_limit = 700
+score_limit = 1500
 
 [node name="smolScrappers" type="Sprite" parent="."]
 position = Vector2( 128, 90 )
 z_index = -7
 texture = ExtResource( 7 )
 script = ExtResource( 11 )
-score_limit = 800
+score_limit = 3000
 
 [node name="SkyScrapper" type="Sprite" parent="."]
 position = Vector2( 128, 93 )
 z_index = -6
 texture = ExtResource( 3 )
 script = ExtResource( 11 )
-score_limit = 900
+score_limit = 10000
 
 [node name="castle" type="Sprite" parent="."]
 position = Vector2( 125, 93 )
 z_index = -4
 texture = ExtResource( 4 )
 script = ExtResource( 11 )
-score_limit = 1000
+score_limit = 5000
 
 [node name="smilling_friend" type="Sprite" parent="."]
 position = Vector2( 127, 91 )
 z_index = -9
 texture = ExtResource( 9 )
 script = ExtResource( 11 )
-score_limit = 1100
+score_limit = 19000
 
 [node name="FloatingCity" type="Sprite" parent="."]
 position = Vector2( 128, 93 )
 z_index = -8
 texture = ExtResource( 1 )
 script = ExtResource( 11 )
-score_limit = 1200
+score_limit = 18000
 
 [node name="Dome" type="Sprite" parent="."]
 position = Vector2( 115, 90 )
 z_index = -5
 texture = ExtResource( 8 )
 script = ExtResource( 11 )
-score_limit = 1300
+score_limit = 16000
 
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource( 10 )
-score_limit = 1400
+score_limit = 12500
 anim_name = "fly by"
 
 [node name="ufo" type="Sprite" parent="Node2D"]

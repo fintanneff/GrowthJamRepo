@@ -4,6 +4,7 @@ export(int) var graphic_pixel_size
 export(bool) var does_explode
 export(float) var speed_min
 export(float) var speed_max
+export(int) var point_value
 
 export(Vector2) var pop_cloud_size
 export(float) var pop_cloud_duration
@@ -41,13 +42,12 @@ func _physics_process(delta):
 	elif (linear_velocity.length() > speed_max):
 		linear_velocity *= 0.9
 	#To keep it from getting stuck in the top
-	if (transform.origin.y < 0):
-		linear_velocity.y = 80
+	if (transform.origin.y < 8):
+		linear_velocity.y = 70
 
 func _on_BulletZone_area_entered(area):
 	if (transform.origin.distance_squared_to(Vector2(ScoreTracker.player_last_x, ScoreTracker.player_last_y)) < 1000):
 		ScoreTracker.increase_score(15)
-		print("close hit!")
 	else:
 		ScoreTracker.increase_score(10)
 	area.queue_free()
