@@ -11,4 +11,4 @@ func hard_set_fade(val):
 	
 func _physics_process(delta):
 	if (modulate.a != ifade):
-		modulate.a = lerp(modulate.a, ifade, 0.01)
+		modulate.a = lerp(modulate.a, ifade, 0.007)

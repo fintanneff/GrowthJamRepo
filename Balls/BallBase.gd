@@ -13,6 +13,7 @@ export(Vector2) var pop_bang_size
 
 onready var ballgraphic = $TestBall
 onready var cshape = $CShape
+onready var inflatesound = $InflateSound
 onready var bzone = get_node("BulletZone/CollisionShape2D")
 var iscale = Vector2.ZERO
 
@@ -46,6 +47,8 @@ func _physics_process(delta):
 		linear_velocity.y = 70
 
 func _on_BulletZone_area_entered(area):
+	inflatesound.play()
+	inflatesound.pitch_scale += 0.1
 	if (transform.origin.distance_squared_to(Vector2(ScoreTracker.player_last_x, ScoreTracker.player_last_y)) < 1000):
 		ScoreTracker.increase_score(15)
 	else:
@@ -76,6 +79,7 @@ func react_to_star_explode():
 	onpop()
 
 func onpop():
+	ScoreTracker.playExplodeSound()
 	ScoreTracker.pop_check(self)
 	ScoreTracker.increase_score(100)
 	var x = pop_object.instance()

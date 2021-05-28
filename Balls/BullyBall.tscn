@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Balls/Sprites/bully_balloon_red-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Balls/BallBase.gd" type="Script" id=2]
+[ext_resource path="res://Balls/inflate.ogg" type="AudioStream" id=3]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
@@ -69,6 +70,11 @@ hframes = 4
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
 anims/idle = SubResource( 4 )
+
+[node name="InflateSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -15.0
+pitch_scale = 0.3
 
 [connection signal="body_entered" from="." to="." method="_on_TestBall_body_entered"]
 [connection signal="area_entered" from="BulletZone" to="." method="_on_BulletZone_area_entered"]

@@ -23,6 +23,8 @@ onready var small_balloon = preload("res://Balls/SmallBall.tscn")
 onready var med_balloon = preload("res://Balls/BullyBall.tscn")
 onready var large_balloon = preload("res://Balls/StarBall.tscn")
 
+onready var explodeSound = $ExplodePlayer
+
 var internal_d12 = 1
 
 #func _ready():
@@ -166,3 +168,6 @@ func new_round():
 			newball.transform.origin.x = rand_range(32, 224)
 			newball.transform.origin.y = rand_range(-16, -64)
 			get_tree().get_root().get_node("Main").call_deferred("add_child", newball)
+
+func playExplodeSound():
+	explodeSound.play()

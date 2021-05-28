@@ -9,6 +9,8 @@ var midshot = false
 onready var animator = $AnimationPlayer
 onready var sprite = $Sprite
 
+onready var shootsoundplayer = $ShootSoundPlayer
+
 onready var bullet = preload("res://Bullet/Bullet.tscn")
 onready var corpse = preload("res://Bullet/Bullet.tscn")
 onready var gameovertext = preload("res://GameScreen/GameOverText.tscn")
@@ -65,6 +67,7 @@ func _physics_process(delta):
 			
 	#Shooting
 	if (Input.is_action_just_pressed("ui_shoot")):
+		shootsoundplayer.play()
 		var newbullet = bullet.instance()
 		newbullet.transform.origin.x = transform.origin.x
 		newbullet.transform.origin.y = transform.origin.y
