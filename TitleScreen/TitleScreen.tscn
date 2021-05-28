@@ -11,7 +11,7 @@
 [ext_resource path="res://GameScreen/leftbord.png" type="Texture" id=9]
 [ext_resource path="res://GameScreen/Rightbord.png" type="Texture" id=10]
 [ext_resource path="res://GameScreen/newUpDownBord.png" type="Texture" id=11]
-[ext_resource path="res://Bullet/Bullet.png" type="Texture" id=12]
+[ext_resource path="res://GameScreen/hand_pointer.png" type="Texture" id=12]
 [ext_resource path="res://TitleScreen/Cursor.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -20,12 +20,14 @@ extents = Vector2( 40, 8 )
 [node name="TitleScreen" type="Node2D"]
 
 [node name="Bullet" type="Sprite" parent="."]
-position = Vector2( 103, 122 )
+position = Vector2( 70, 55 )
+z_index = 4
 texture = ExtResource( 12 )
+hframes = 4
 script = ExtResource( 13 )
-gamePos = Vector2( 73, 56 )
-creditPos = Vector2( 91, 100 )
-exitPos = Vector2( 103, 122 )
+gamePos = Vector2( 70, 56 )
+creditPos = Vector2( 85, 100 )
+exitPos = Vector2( 93, 122 )
 
 [node name="Sprite" type="Sprite" parent="."]
 z_index = -10
@@ -35,7 +37,7 @@ script = ExtResource( 3 )
 
 [node name="Credits" type="StaticBody2D" parent="."]
 position = Vector2( 138, 100 )
-z_index = 10
+z_index = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Credits"]
 shape = SubResource( 1 )
@@ -54,7 +56,7 @@ __meta__ = {
 
 [node name="Exit" type="StaticBody2D" parent="."]
 position = Vector2( 147, 121 )
-z_index = 10
+z_index = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
 shape = SubResource( 1 )

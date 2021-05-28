@@ -12,6 +12,7 @@ func _physics_process(delta):
 		waittimer -= 1
 	else:
 		transform.origin.y = lerp(transform.origin.y, 0, 0.05)
-		if (Input.is_action_just_pressed("ui_accept")):
+		if (Input.is_action_just_released("ui_shoot")):
 			ScoreTracker.set_me_up()
+			ScreenFader.hard_set_fade(1)
 			get_tree().reload_current_scene()

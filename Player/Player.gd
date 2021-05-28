@@ -18,7 +18,7 @@ onready var goobcorpse = preload("res://Player/GoobCorpse.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	ScreenFader.hard_set_fade(1)
+	#ScreenFader.hard_set_fade(1)
 	ScreenFader.set_ifade(0)
 	animator.play("Idle", -1, 1, false) 
 	pass
