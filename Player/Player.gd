@@ -14,6 +14,7 @@ onready var shootsoundplayer = $ShootSoundPlayer
 onready var bullet = preload("res://Bullet/Bullet.tscn")
 onready var corpse = preload("res://Bullet/Bullet.tscn")
 onready var gameovertext = preload("res://GameScreen/GameOverText.tscn")
+onready var goobcorpse = preload("res://Player/GoobCorpse.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -85,6 +86,9 @@ func _physics_process(delta):
 func _on_Area2D_body_entered(body):
 	#ScoreTracker.set_me_up()
 	#get_tree().reload_current_scene()
+	var corpse = goobcorpse.instance()
+	corpse.transform.origin = transform.origin
+	get_parent().add_child(corpse)
 	queue_free()
 	ScreenFader.set_ifade(0.7)
 	ScoreTracker.player_dead = true

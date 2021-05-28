@@ -45,6 +45,7 @@ graphic_pixel_size = 64
 speed_min = 10.0
 speed_max = 110.0
 point_value = 200
+point_frame = 1
 pop_cloud_size = Vector2( 1.4, 1.4 )
 pop_cloud_duration = 20.0
 pop_cloud_speed = 2.2

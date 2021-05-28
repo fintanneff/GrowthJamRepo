@@ -5,6 +5,7 @@ export(bool) var does_explode
 export(float) var speed_min
 export(float) var speed_max
 export(int) var point_value
+export(int) var point_frame
 
 export(Vector2) var pop_cloud_size
 export(float) var pop_cloud_duration
@@ -19,6 +20,7 @@ var iscale = Vector2.ZERO
 
 onready var pop_object = preload("res://Balls/Small_popsprite.tscn")
 onready var pop_cloud = preload("res://Balls/CloudSprite.tscn")
+onready var pointsprite = preload("res://GameScreen/PointNumber.tscn")
 
 func _ready():
 	call_deferred("set_me_up")
@@ -79,6 +81,10 @@ func react_to_star_explode():
 	onpop()
 
 func onpop():
+	var p = pointsprite.instance()
+	p.transform.origin = transform.origin
+	p.frame = point_frame
+	get_parent().add_child(p)
 	ScoreTracker.playExplodeSound()
 	ScoreTracker.pop_check(self)
 	ScoreTracker.increase_score(100)

@@ -4,7 +4,7 @@
 [ext_resource path="res://GameScreen/GameOverText.gd" type="Script" id=2]
 
 [node name="GameOverText" type="Node2D"]
-z_index = 100
+z_index = 5
 script = ExtResource( 2 )
 
 [node name="Txt" type="RichTextLabel" parent="."]
