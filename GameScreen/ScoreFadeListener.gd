@@ -16,5 +16,10 @@ func on_score_update(score):
 
 func _physics_process(delta):
 	if (done):
-		modulate.a = lerp(modulate.a, 1, 0.005)
-		transform.origin.y = lerp(transform.origin.y, starty, 0.01)
+		if (modulate.a < 0.995):
+			modulate.a = lerp(modulate.a, 1, 0.005)
+			transform.origin.y = lerp(transform.origin.y, starty, 0.01)
+		else:
+			var me = ScoreTracker.updatable.find(self)
+			ScoreTracker.updatable.remove(me)
+			set_script(null)

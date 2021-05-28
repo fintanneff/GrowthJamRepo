@@ -32,191 +32,229 @@ centered = false
 
 [node name="Ground" type="Sprite" parent="Mockup"]
 position = Vector2( 16, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground2" type="Sprite" parent="Mockup"]
 position = Vector2( 24, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground3" type="Sprite" parent="Mockup"]
 position = Vector2( 32, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground4" type="Sprite" parent="Mockup"]
 position = Vector2( 40, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground5" type="Sprite" parent="Mockup"]
 position = Vector2( 48, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground6" type="Sprite" parent="Mockup"]
 position = Vector2( 56, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground7" type="Sprite" parent="Mockup"]
 position = Vector2( 64, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground8" type="Sprite" parent="Mockup"]
 position = Vector2( 72, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground9" type="Sprite" parent="Mockup"]
 position = Vector2( 80, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground10" type="Sprite" parent="Mockup"]
 position = Vector2( 88, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground11" type="Sprite" parent="Mockup"]
 position = Vector2( 96, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground12" type="Sprite" parent="Mockup"]
 position = Vector2( 104, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground13" type="Sprite" parent="Mockup"]
 position = Vector2( 112, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground14" type="Sprite" parent="Mockup"]
 position = Vector2( 120, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground15" type="Sprite" parent="Mockup"]
 position = Vector2( 128, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground16" type="Sprite" parent="Mockup"]
 position = Vector2( 136, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground17" type="Sprite" parent="Mockup"]
 position = Vector2( 144, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground18" type="Sprite" parent="Mockup"]
 position = Vector2( 152, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground19" type="Sprite" parent="Mockup"]
 position = Vector2( 160, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground20" type="Sprite" parent="Mockup"]
 position = Vector2( 168, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground21" type="Sprite" parent="Mockup"]
 position = Vector2( 176, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground22" type="Sprite" parent="Mockup"]
 position = Vector2( 184, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground23" type="Sprite" parent="Mockup"]
 position = Vector2( 192, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground24" type="Sprite" parent="Mockup"]
 position = Vector2( 200, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground25" type="Sprite" parent="Mockup"]
 position = Vector2( 208, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground26" type="Sprite" parent="Mockup"]
 position = Vector2( 216, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground27" type="Sprite" parent="Mockup"]
 position = Vector2( 224, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground28" type="Sprite" parent="Mockup"]
 position = Vector2( 232, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground29" type="Sprite" parent="Mockup"]
 position = Vector2( 240, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground34" type="Sprite" parent="Mockup"]
 position = Vector2( 8, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground35" type="Sprite" parent="Mockup"]
 position = Vector2( 0, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground36" type="Sprite" parent="Mockup"]
 position = Vector2( -8, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground37" type="Sprite" parent="Mockup"]
 position = Vector2( -16, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground38" type="Sprite" parent="Mockup"]
 position = Vector2( -24, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground30" type="Sprite" parent="Mockup"]
 position = Vector2( 248, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground31" type="Sprite" parent="Mockup"]
 position = Vector2( 256, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground32" type="Sprite" parent="Mockup"]
 position = Vector2( 264, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Ground33" type="Sprite" parent="Mockup"]
 position = Vector2( 272, 160 )
+z_index = 3
 texture = ExtResource( 1 )
 centered = false
 
@@ -268,6 +306,7 @@ one_way_collision = true
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( 195, 154 )
+z_as_relative = false
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2( 24, 16 )

@@ -79,10 +79,14 @@ func score_progress_table():
 		begin_misc_ball_timer()
 	if (round_ball_countdown == -1 && score >= 500):
 		begin_round_timer()
-	if (score >= 30000):
+	elif (score >= 50000):
+		round_ball_reset_time = 300
+	elif (score >= 40000):
+		round_ball_reset_time = 450
+	elif (score >= 30000):
 		misc_ball_reset_time = 30
 		round_ball_reset_time = 500
-		max_balls = 25
+		max_balls = 20
 		round_volume = 10
 	elif (score >= 25000):
 		misc_ball_reset_time = 50
@@ -90,7 +94,7 @@ func score_progress_table():
 	elif (score >= 20000):
 		misc_ball_reset_time = 70
 		round_ball_reset_time = 600
-		max_balls = 20
+		max_balls = 18
 	elif (score >= 15000):
 		misc_ball_reset_time = 100
 		round_ball_reset_time = 650

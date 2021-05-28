@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://GameScreen/flower_back.png" type="Texture" id=1]
+[ext_resource path="res://GameScreen/flower_front.png" type="Texture" id=2]
+[ext_resource path="res://GameScreen/flower_front.gd" type="Script" id=3]
+
+[node name="Flower" type="Sprite"]
+z_as_relative = false
+
+[node name="flower_front" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+z_index = -1
+z_as_relative = false
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="flower_back" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+z_index = -2
+z_as_relative = false
+texture = ExtResource( 1 )

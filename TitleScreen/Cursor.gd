@@ -10,6 +10,7 @@ export (Vector2) var exitPos
 var animtimer = 30
 var waittimertickdown = false
 
+
 func _physics_process(delta):
 	
 	if (!waittimertickdown):
@@ -45,8 +46,8 @@ func _physics_process(delta):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	randomize()
 	cursorChange()
-	pass # Replace with function body.
 
 
 

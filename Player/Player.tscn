@@ -158,7 +158,6 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -1 )
-z_index = 3
 texture = ExtResource( 1 )
 hframes = 9
 frame = 2

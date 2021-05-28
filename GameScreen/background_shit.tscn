@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://GameScreen/BackGround/FloatingCity.png" type="Texture" id=1]
 [ext_resource path="res://GameScreen/BackGround/Planet.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://GameScreen/BackGround/smilling_friend.png" type="Texture" id=9]
 [ext_resource path="res://GameScreen/ScoreAnimationListener.gd" type="Script" id=10]
 [ext_resource path="res://GameScreen/ScoreFadeListener.gd" type="Script" id=11]
+[ext_resource path="res://GameScreen/Flower.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fly by"
@@ -36,7 +37,7 @@ position = Vector2( 137, 92 )
 z_index = -10
 texture = ExtResource( 2 )
 script = ExtResource( 11 )
-score_limit = 17000
+score_limit = 18000
 
 [node name="laturn2" type="Sprite" parent="."]
 position = Vector2( -4, 111 )
@@ -78,14 +79,14 @@ position = Vector2( 127, 91 )
 z_index = -9
 texture = ExtResource( 9 )
 script = ExtResource( 11 )
-score_limit = 19000
+score_limit = 28000
 
 [node name="FloatingCity" type="Sprite" parent="."]
 position = Vector2( 128, 93 )
 z_index = -8
 texture = ExtResource( 1 )
 script = ExtResource( 11 )
-score_limit = 18000
+score_limit = 21000
 
 [node name="Dome" type="Sprite" parent="."]
 position = Vector2( 115, 90 )
@@ -106,3 +107,53 @@ texture = ExtResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
 "anims/fly by" = SubResource( 1 )
+
+[node name="Flower" parent="." instance=ExtResource( 12 )]
+position = Vector2( 51, 162 )
+script = ExtResource( 11 )
+score_limit = 500
+
+[node name="Flower2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 70, 162 )
+script = ExtResource( 11 )
+score_limit = 1000
+
+[node name="Flower5" parent="." instance=ExtResource( 12 )]
+position = Vector2( 161, 163 )
+script = ExtResource( 11 )
+score_limit = 2000
+
+[node name="Flower6" parent="." instance=ExtResource( 12 )]
+position = Vector2( 140, 164 )
+script = ExtResource( 11 )
+score_limit = 4000
+
+[node name="Flower7" parent="." instance=ExtResource( 12 )]
+position = Vector2( 109, 161 )
+script = ExtResource( 11 )
+score_limit = 8000
+
+[node name="Flower8" parent="." instance=ExtResource( 12 )]
+position = Vector2( 128, 161 )
+script = ExtResource( 11 )
+score_limit = 16500
+
+[node name="Flower9" parent="." instance=ExtResource( 12 )]
+position = Vector2( 239, 163 )
+script = ExtResource( 11 )
+score_limit = 42000
+
+[node name="Flower10" parent="." instance=ExtResource( 12 )]
+position = Vector2( 230, 165 )
+script = ExtResource( 11 )
+score_limit = 25500
+
+[node name="Flower3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 79, 162 )
+script = ExtResource( 11 )
+score_limit = 49000
+
+[node name="Flower4" parent="." instance=ExtResource( 12 )]
+position = Vector2( 118, 162 )
+script = ExtResource( 11 )
+score_limit = 15326
