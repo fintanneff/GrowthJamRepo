@@ -13,7 +13,7 @@
 [ext_resource path="res://GameScreen/newUpDownBord.png" type="Texture" id=11]
 [ext_resource path="res://GameScreen/hand_pointer.png" type="Texture" id=12]
 [ext_resource path="res://TitleScreen/Cursor.gd" type="Script" id=13]
-[ext_resource path="res://TitleScreen/Passing Times.ogg" type="AudioStream" id=14]
+[ext_resource path="res://Passing Times.ogg" type="AudioStream" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 40, 8 )
