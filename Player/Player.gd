@@ -48,6 +48,8 @@ func input_move_wasd():
 	if (abs(movevec.x) > 0.5):
 		move_and_collide(sign(movevec.x) * Vector2.RIGHT * moveSpeed)
 		moving = true
+		if (abs(shootvec.x) < 0.5):
+			sprite.scale.x = sign(-movevec.x)
 	#Movement Functionality with WASD
 	ScoreTracker.player_last_x = transform.origin.x
 	ScoreTracker.player_last_y = transform.origin.y
@@ -85,7 +87,7 @@ func input_move_wasd():
 	#if (Input.is_action_just_pressed("ui_shoot") || angle.length() > 0.1):
 	if (angle.length() > 0.1):
 		if (autofire_timer < 1):
-			autofire_timer = 15
+			autofire_timer = 10
 			shootsoundplayer.play()
 			var newbullet = bullet.instance()
 			newbullet.transform.origin.x = transform.origin.x
@@ -94,11 +96,11 @@ func input_move_wasd():
 			get_parent().add_child(newbullet)
 			midshot = true
 			if (angle.y < -.4 && abs(angle.x) > 0.5):
-				animator.play("AngleShoot", -1, 1, false)
+				animator.play("AngleShoot", -1, 1.4, false)
 			elif (angle.y < -.4):
-				animator.play("UpShoot", -1, 1, false)
+				animator.play("UpShoot", -1, 1.4, false)
 			else:
-				animator.play("LeftShoot", -1, 1, false)
+				animator.play("LeftShoot", -1, 1.4, false)
 		else:
 			autofire_timer -= 1
 	else:
