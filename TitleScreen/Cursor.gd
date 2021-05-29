@@ -94,6 +94,7 @@ func _physics_process(delta):
 			menu_control()
 	else:
 		if(Input.is_action_just_pressed("ui_shoot") || Input.is_action_just_pressed("ui_Xleft")):
+			print("hello_world")
 			timerEnd()
 
 
@@ -124,5 +125,7 @@ func timerEnd():
 	if(menustate == 1):
 		ScreenFader.anim_into_game()
 		get_tree().change_scene("res://FintanSandbox/FintanTestScene.tscn")
-		waittimertickdown = true
+	else:
+		ScreenFader.anim_into_game()
+		get_tree().change_scene("res://FintanSandbox/FintanTestScene.tscn")
 

@@ -12,7 +12,11 @@ func _physics_process(delta):
 		waittimer -= 1
 	else:
 		transform.origin.y = lerp(transform.origin.y, 0, 0.05)
-		if (Input.is_action_just_released("ui_shoot")):
+		if (Input.is_action_just_released("ui_shoot") || Input.is_action_just_released("ui_Xleft")):
 			ScoreTracker.set_me_up()
 			ScreenFader.hard_set_fade(1)
 			get_tree().reload_current_scene()
+		if (Input.is_action_just_released("ui_hold") || Input.is_action_just_released("ui_Adown")):
+			ScoreTracker.set_me_up()
+			ScreenFader.hard_set_fade(1)
+			get_tree().change_scene("res://TitleScreen/TitleScreen.tscn")
