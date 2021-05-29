@@ -19,4 +19,5 @@ func _physics_process(delta):
 		if (Input.is_action_just_released("ui_hold") || Input.is_action_just_released("ui_Adown")):
 			ScoreTracker.set_me_up()
 			ScreenFader.hard_set_fade(1)
+			ScreenFader.set_ifade(0)
 			get_tree().change_scene("res://TitleScreen/TitleScreen.tscn")
