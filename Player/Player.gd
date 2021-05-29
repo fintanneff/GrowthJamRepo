@@ -172,6 +172,9 @@ func _physics_process(delta):
 
 
 func _on_Area2D_body_entered(body):
+	for i in get_parent().get_children():
+		if i.has_method("death_react"):
+			i.death_react()
 	#ScoreTracker.set_me_up()
 	#get_tree().reload_current_scene()
 	var corpse = goobcorpse.instance()

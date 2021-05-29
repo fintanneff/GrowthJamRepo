@@ -102,7 +102,6 @@ func _physics_process(delta):
 func _ready():
 	randomize()
 	iPos = gamePos
-	
 
 
 func cursorPress():
