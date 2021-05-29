@@ -26,11 +26,11 @@ func big_reset():
 	
 
 func menu_main():
-	if(Input.is_action_just_pressed("ui_up")):
+	if(Input.is_action_just_pressed("ui_up") || Input.is_action_just_pressed("ui_dpadup")):
 		menuNum -= 1
 		if (menuNum < 0):
 			menuNum = 2
-	if(Input.is_action_just_pressed("ui_down")):
+	if(Input.is_action_just_pressed("ui_down") || Input.is_action_just_pressed("ui_dpaddown")):
 		menuNum += 1
 		if(menuNum > 2):
 			menuNum = 0
@@ -43,7 +43,7 @@ func menu_main():
 	
 	transform.origin = lerp(transform.origin,iPos,0.1)
 	
-	if(Input.is_action_just_pressed("ui_shoot")):
+	if(Input.is_action_just_pressed("ui_shoot") || Input.is_action_just_pressed("ui_Xleft")):
 		cursorPress()
 	
 	if (animtimer > 0):
@@ -57,11 +57,11 @@ func menu_main():
 
 
 func menu_control():
-	if(Input.is_action_just_pressed("ui_up")):
+	if(Input.is_action_just_pressed("ui_up") || Input.is_action_just_pressed("ui_dpadup")):
 		menuNum -= 1
 		if (menuNum < 0):
 			menuNum = 1
-	if(Input.is_action_just_pressed("ui_down")):
+	if(Input.is_action_just_pressed("ui_down") || Input.is_action_just_pressed("ui_dpaddown")):
 		menuNum += 1
 		if(menuNum > 1):
 			menuNum = 0
@@ -72,7 +72,7 @@ func menu_control():
 	
 	transform.origin = lerp(transform.origin,iPos,0.1)
 	
-	if(Input.is_action_just_pressed("ui_shoot")):
+	if(Input.is_action_just_pressed("ui_shoot") || Input.is_action_just_pressed("ui_Xleft")):
 		cursorPress()
 	
 	if (animtimer > 0):
@@ -85,7 +85,7 @@ func menu_control():
 			frame += 1
 
 func _physics_process(delta):
-	if (Input.is_action_just_pressed("ui_hold")):
+	if (Input.is_action_just_pressed("ui_hold") || Input.is_action_just_pressed("ui_Adown")):
 		big_reset()
 	if (!waittimertickdown):
 		if (menustate == 0):
@@ -93,7 +93,7 @@ func _physics_process(delta):
 		elif (menustate == 1):
 			menu_control()
 	else:
-		if(Input.is_action_just_pressed("ui_shoot")):
+		if(Input.is_action_just_pressed("ui_shoot") || Input.is_action_just_pressed("ui_Xleft")):
 			timerEnd()
 
 

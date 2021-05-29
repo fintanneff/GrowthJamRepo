@@ -114,7 +114,7 @@ func input_move_arrow():
 	#Movement Functionality
 	ScoreTracker.player_last_x = transform.origin.x
 	ScoreTracker.player_last_y = transform.origin.y
-	if(abs(movevec.x) > 0.5 && !Input.is_action_pressed("ui_hold")):
+	if(abs(movevec.x) > 0.5 && !(Input.is_action_pressed("ui_hold")||Input.is_action_just_pressed("ui_Adown")) ):
 		if(movevec.y < -.4):
 			try_animate("WalkLeftAngled")
 			angle = Vector2(sign(movevec.x), -1)
@@ -133,7 +133,7 @@ func input_move_arrow():
 			try_animate("Idle")
 			angle = Vector2(-sprite.scale.x, 0)
 	#Shooting
-	if (Input.is_action_just_pressed("ui_shoot")):
+	if (Input.is_action_just_pressed("ui_shoot") || Input.is_action_just_pressed("ui_Xleft")):
 		shootsoundplayer.play()
 		var newbullet = bullet.instance()
 		newbullet.transform.origin.x = transform.origin.x
