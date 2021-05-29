@@ -87,7 +87,7 @@ func onpop():
 	get_parent().add_child(p)
 	ScoreTracker.playExplodeSound()
 	ScoreTracker.pop_check(self)
-	ScoreTracker.increase_score(100)
+	ScoreTracker.increase_score(point_value)
 	var x = pop_object.instance()
 	x.transform.origin = transform.origin
 	x.angle(Vector2.ZERO, 0, 15, pop_bang_size)
