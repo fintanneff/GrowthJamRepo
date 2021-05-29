@@ -19,6 +19,8 @@ var player_last_x = 0
 var player_last_y = 0
 var player_dead = false
 
+var player_control_mode = false
+
 onready var small_balloon = preload("res://Balls/SmallBall.tscn")
 onready var med_balloon = preload("res://Balls/BullyBall.tscn")
 onready var large_balloon = preload("res://Balls/StarBall.tscn")
