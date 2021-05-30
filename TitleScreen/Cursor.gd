@@ -110,6 +110,8 @@ func cursorPress():
 			menustate = 1
 			menu1.visible = false
 			menu2.visible = true
+		if(menuNum == 2):
+			get_tree().quit()
 	elif (menustate == 1):
 		if(menuNum == 0):
 			ScoreTracker.player_control_mode = false
