@@ -1,14 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player/Sprites/ded.png" type="Texture" id=1]
 [ext_resource path="res://Player/GoobCorpse.gd" type="Script" id=2]
 [ext_resource path="res://Player/dethsound1.ogg" type="AudioStream" id=3]
+[ext_resource path="res://KrisSandbox/quite_nasty_1.wav" type="AudioStream" id=4]
 
 [node name="GoobCorpse" type="Sprite"]
 z_index = 5
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="based_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="cringe_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-autoplay = true
