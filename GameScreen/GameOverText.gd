@@ -3,7 +3,7 @@ extends Node2D
 var waittimer = 50
 
 func _ready():
-	transform.origin.y += 100
+	transform.origin.y += 150
 	pass
 
 

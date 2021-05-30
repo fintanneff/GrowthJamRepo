@@ -20,6 +20,7 @@ var player_last_y = 0
 var player_dead = false
 
 var player_control_mode = false
+var game_music_mode = true
 
 onready var small_balloon = preload("res://Balls/SmallBall.tscn")
 onready var med_balloon = preload("res://Balls/BullyBall.tscn")

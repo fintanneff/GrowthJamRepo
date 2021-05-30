@@ -22,14 +22,15 @@ extents = Vector2( 40, 8 )
 [node name="TitleScreen" type="Node2D"]
 
 [node name="Bullet" type="Sprite" parent="."]
-position = Vector2( 62, 32 )
+position = Vector2( 68, 56 )
 z_index = 4
 texture = ExtResource( 12 )
 hframes = 4
 script = ExtResource( 13 )
 gamePos = Vector2( 70, 56 )
 creditPos = Vector2( 85, 100 )
-exitPos = Vector2( 93, 122 )
+soundPos = Vector2( 95, 120 )
+exitPos = Vector2( 103, 142 )
 classicControlPos = Vector2( 61, 32 )
 modernControlPos = Vector2( 67, 49 )
 
@@ -80,7 +81,7 @@ __meta__ = {
 }
 
 [node name="Exit" type="StaticBody2D" parent="Menu1"]
-position = Vector2( 147, 121 )
+position = Vector2( 157, 141 )
 z_index = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Menu1/Exit"]
@@ -169,6 +170,18 @@ texture = ExtResource( 8 )
 [node name="goobs" type="Sprite" parent="Menu1/TitleCard/Ground10"]
 position = Vector2( -17, -11 )
 texture = ExtResource( 5 )
+
+[node name="SoundText" type="RichTextLabel" parent="Menu1"]
+margin_left = 110.0
+margin_top = 112.0
+margin_right = 200.0
+margin_bottom = 152.0
+theme = ExtResource( 1 )
+text = "Music On"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Menu2" type="Node2D" parent="."]
 visible = false

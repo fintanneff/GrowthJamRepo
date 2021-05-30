@@ -8,9 +8,12 @@ var menustate = 0
 onready var menu1 = get_parent().get_node("Menu1")
 onready var menu2 = get_parent().get_node("Menu2")
 onready var control_display = get_parent().get_node("Menu2").get_node("classic_vs_modern")
+onready var menuMusic = get_parent().get_node("AudioStreamPlayer")
+onready var soundText = get_parent().get_node("Menu1").get_node("SoundText")
 
 export (Vector2) var gamePos
 export (Vector2) var creditPos
+export (Vector2) var soundPos
 export (Vector2) var exitPos
 
 export (Vector2) var classicControlPos
@@ -30,16 +33,18 @@ func menu_main():
 	if(Input.is_action_just_pressed("ui_up") || Input.is_action_just_pressed("ui_dpadup")):
 		menuNum -= 1
 		if (menuNum < 0):
-			menuNum = 2
+			menuNum = 3
 	if(Input.is_action_just_pressed("ui_down") || Input.is_action_just_pressed("ui_dpaddown")):
 		menuNum += 1
-		if(menuNum > 2):
+		if(menuNum > 3):
 			menuNum = 0
 	if(menuNum == 0):
 		iPos = gamePos
 	elif(menuNum == 1):
 		iPos = creditPos
 	elif(menuNum == 2):
+		iPos = soundPos
+	elif(menuNum == 3):
 		iPos = exitPos
 	
 	transform.origin = lerp(transform.origin,iPos,0.1)
@@ -103,6 +108,14 @@ func _physics_process(delta):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if (!ScoreTracker.game_music_mode):
+		ScoreTracker.game_music_mode = false
+		soundText.text = "Music Off"
+		menuMusic.volume_db = -80
+	else:
+		ScoreTracker.game_music_mode = true
+		soundText.text = "Music On"
+		menuMusic.volume_db = 0
 	randomize()
 	iPos = gamePos
 
@@ -115,7 +128,16 @@ func cursorPress():
 			menu2.visible = true
 		if(menuNum == 1):
 			get_tree().change_scene("res://Credits/Credits.tscn")
-		if(menuNum == 2):
+		if (menuNum == 2):
+			if (soundText.text == "Music On"):
+				ScoreTracker.game_music_mode = false
+				soundText.text = "Music Off"
+				menuMusic.volume_db = -80
+			else:
+				ScoreTracker.game_music_mode = true
+				soundText.text = "Music On"
+				menuMusic.volume_db = 0
+		if(menuNum == 3):
 			get_tree().quit()
 	elif (menustate == 1):
 		if(menuNum == 0):

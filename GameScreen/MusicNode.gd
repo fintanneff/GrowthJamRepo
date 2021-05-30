@@ -10,7 +10,10 @@ onready var ice = $Ice
 var ice_ivolume = -80
 
 func _ready():
-	ScoreTracker.updatable.push_front(self)
+	if (ScoreTracker.game_music_mode):
+		ScoreTracker.updatable.push_front(self)
+	else:
+		set_script(null)
 	
 func on_score_update(score):
 	if (!ScoreTracker.player_dead):
