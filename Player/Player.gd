@@ -144,11 +144,11 @@ func input_move_arrow():
 		get_parent().add_child(newbullet)
 		midshot = true
 		if (angle.y < -.4 && abs(movevec.x) > 0.5):
-			animator.play("AngleShoot", -1, 1, false)
+			animator.play("AngleShoot", -1, 1.4, false)
 		elif (angle.y < -.4):
-			animator.play("UpShoot", -1, 1, false)
+			animator.play("UpShoot", -1, 1.4, false)
 		else:
-			animator.play("LeftShoot", -1, 1, false)
+			animator.play("LeftShoot", -1, 1.4, false)
 
 func _physics_process(delta):
 	#Finding Controller Inputs

@@ -7,6 +7,7 @@ var menustate = 0
 
 onready var menu1 = get_parent().get_node("Menu1")
 onready var menu2 = get_parent().get_node("Menu2")
+onready var control_display = get_parent().get_node("Menu2").get_node("classic_vs_modern")
 
 export (Vector2) var gamePos
 export (Vector2) var creditPos
@@ -67,8 +68,10 @@ func menu_control():
 			menuNum = 0
 	if(menuNum == 0):
 		iPos = classicControlPos
+		control_display.frame = 0
 	elif(menuNum == 1):
 		iPos = modernControlPos
+		control_display.frame = 1
 	
 	transform.origin = lerp(transform.origin,iPos,0.1)
 	
