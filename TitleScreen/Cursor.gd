@@ -113,6 +113,8 @@ func cursorPress():
 			menustate = 1
 			menu1.visible = false
 			menu2.visible = true
+		if(menuNum == 1):
+			get_tree().change_scene("res://Credits/Credits.tscn")
 		if(menuNum == 2):
 			get_tree().quit()
 	elif (menustate == 1):
