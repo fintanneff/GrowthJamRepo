@@ -169,6 +169,12 @@ func _physics_process(delta):
 		input_move_wasd()
 	else:
 		input_move_arrow()
+	#Quick exit to title
+	if (Input.is_action_just_pressed("ui_cancel")):
+			ScoreTracker.set_me_up()
+			ScreenFader.hard_set_fade(0.7)
+			ScreenFader.set_ifade(0)
+			get_tree().change_scene("res://TitleScreen/TitleScreen.tscn")
 
 
 func _on_Area2D_body_entered(body):

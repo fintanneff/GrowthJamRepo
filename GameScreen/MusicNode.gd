@@ -13,10 +13,11 @@ func _ready():
 	ScoreTracker.updatable.push_front(self)
 	
 func on_score_update(score):
-	if (score >= 3000): drum_ivolume = 0
-	if (score >= 15000): bass_ivolume = 0
-	if (score >= 25000): echo_ivolume = 0
-	if (score >= 8000): ice_ivolume = 0
+	if (!ScoreTracker.player_dead):
+		if (score >= 3000): drum_ivolume = 0
+		if (score >= 15000): bass_ivolume = 0
+		if (score >= 25000): echo_ivolume = 0
+		if (score >= 8000): ice_ivolume = 0
 	
 func death_react():
 	drum_ivolume = -80
