@@ -5,6 +5,7 @@ var ifade = 0
 onready var lscreen = $loadscreen
 onready var fscreen = $fadescreen
 onready var animplayer = $AnimationPlayer
+onready var zoomysound = $zoomout
 
 func _ready():
 	lscreen.scale = Vector2.ZERO
@@ -27,3 +28,6 @@ func anim_out_of_title():
 	
 func anim_into_game():
 	animplayer.play("shrink", -1, 1, false)
+	
+func play_zoomy_sound():
+	zoomysound.play()

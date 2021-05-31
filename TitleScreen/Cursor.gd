@@ -11,6 +11,10 @@ onready var control_display = get_parent().get_node("Menu2").get_node("classic_v
 onready var menuMusic = get_parent().get_node("AudioStreamPlayer")
 onready var soundText = get_parent().get_node("Menu1").get_node("SoundText")
 
+onready var menuSelect = get_parent().get_node("select")
+onready var menuMove = get_parent().get_node("move")
+onready var zoomin = get_parent().get_node("zoomin")
+
 export (Vector2) var gamePos
 export (Vector2) var creditPos
 export (Vector2) var soundPos
@@ -122,6 +126,7 @@ func _ready():
 
 func cursorPress():
 	if (menustate == 0):
+		menuSelect.play()
 		if(menuNum == 0):
 			menustate = 1
 			menu1.visible = false
@@ -144,12 +149,17 @@ func cursorPress():
 			ScoreTracker.player_control_mode = false
 			ScreenFader.anim_out_of_title()
 			waittimertickdown = true
+			menuMusic.volume_db = -80
+			zoomin.play()
 		if(menuNum == 1):
 			ScoreTracker.player_control_mode = true
 			ScreenFader.anim_out_of_title()
 			waittimertickdown = true
+			menuMusic.volume_db = -80
+			zoomin.play()
 		
 func timerEnd():
+	ScreenFader.play_zoomy_sound()
 	if(menustate == 1):
 		ScreenFader.anim_into_game()
 		get_tree().change_scene("res://FintanSandbox/FintanTestScene.tscn")
