@@ -25,6 +25,7 @@ export (Vector2) var modernControlPos
 
 var animtimer = 30
 var waittimertickdown = false
+var waittimer = 80
 
 func big_reset():
 	menu1.visible = true
@@ -105,7 +106,8 @@ func _physics_process(delta):
 		elif (menustate == 1):
 			menu_control()
 	else:
-		if(Input.is_action_just_pressed("ui_shoot") || Input.is_action_just_pressed("ui_Xleft")):
+		waittimer -= 1
+		if(waittimer < 1 || Input.is_action_just_pressed("ui_shoot") || Input.is_action_just_pressed("ui_Xleft")):
 			print("hello_world")
 			timerEnd()
 
