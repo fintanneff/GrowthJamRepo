@@ -13,7 +13,7 @@ config_version=4
 config/name="GoobnBalloons"
 run/main_scene="res://TitleScreen/TitleScreen.tscn"
 config/icon="res://Balls/Sprites/TestBall.png"
-config/windows_native_icon="res://TestBall.ico"
+config/windows_native_icon="res://icon.ico"
 
 [autoload]
 
