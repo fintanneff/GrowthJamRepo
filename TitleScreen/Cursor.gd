@@ -16,6 +16,7 @@ onready var menuMove = get_parent().get_node("move")
 onready var zoomin = get_parent().get_node("zoomin")
 
 export (Vector2) var gamePos
+export (Vector2) var highScorePos
 export (Vector2) var creditPos
 export (Vector2) var soundPos
 export (Vector2) var exitPos
@@ -38,18 +39,20 @@ func menu_main():
 	if(Input.is_action_just_pressed("ui_up") || Input.is_action_just_pressed("ui_dpadup")):
 		menuNum -= 1
 		if (menuNum < 0):
-			menuNum = 3
+			menuNum = 4
 	if(Input.is_action_just_pressed("ui_down") || Input.is_action_just_pressed("ui_dpaddown")):
 		menuNum += 1
-		if(menuNum > 3):
+		if(menuNum > 4):
 			menuNum = 0
 	if(menuNum == 0):
 		iPos = gamePos
 	elif(menuNum == 1):
-		iPos = creditPos
+		iPos = highScorePos
 	elif(menuNum == 2):
-		iPos = soundPos
+		iPos = creditPos
 	elif(menuNum == 3):
+		iPos = soundPos
+	elif(menuNum == 4):
 		iPos = exitPos
 	
 	transform.origin = lerp(transform.origin,iPos,0.1)
@@ -134,8 +137,10 @@ func cursorPress():
 			menu1.visible = false
 			menu2.visible = true
 		if(menuNum == 1):
+			print("GO TO THE SCORE SCREEN")
+		if(menuNum == 2):
 			get_tree().change_scene("res://Credits/Credits.tscn")
-		if (menuNum == 2):
+		if (menuNum == 3):
 			if (soundText.text == "Music On"):
 				ScoreTracker.game_music_mode = false
 				soundText.text = "Music Off"
@@ -144,7 +149,7 @@ func cursorPress():
 				ScoreTracker.game_music_mode = true
 				soundText.text = "Music On"
 				menuMusic.volume_db = 0
-		if(menuNum == 3):
+		if(menuNum == 4):
 			get_tree().quit()
 	elif (menustate == 1):
 		if(menuNum == 0):

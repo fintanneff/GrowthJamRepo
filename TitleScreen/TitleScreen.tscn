@@ -31,9 +31,10 @@ texture = ExtResource( 12 )
 hframes = 4
 script = ExtResource( 13 )
 gamePos = Vector2( 70, 56 )
-creditPos = Vector2( 85, 100 )
-soundPos = Vector2( 95, 120 )
-exitPos = Vector2( 103, 142 )
+highScorePos = Vector2( 70, 95 )
+creditPos = Vector2( 85, 114 )
+soundPos = Vector2( 95, 134 )
+exitPos = Vector2( 103, 154 )
 classicControlPos = Vector2( 61, 32 )
 modernControlPos = Vector2( 67, 49 )
 
@@ -65,7 +66,7 @@ texture = ExtResource( 10 )
 [node name="Menu1" type="Node2D" parent="."]
 
 [node name="Credits" type="StaticBody2D" parent="Menu1"]
-position = Vector2( 138, 100 )
+position = Vector2( 138, 114 )
 z_index = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Menu1/Credits"]
@@ -83,8 +84,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="HighScore" type="StaticBody2D" parent="Menu1"]
+position = Vector2( 124, 94 )
+z_index = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Menu1/HighScore"]
+shape = SubResource( 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Menu1/HighScore/CollisionShape2D"]
+margin_left = -36.0
+margin_top = -8.0
+margin_right = 60.0
+margin_bottom = 16.0
+theme = ExtResource( 1 )
+text = "High Scores"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Exit" type="StaticBody2D" parent="Menu1"]
-position = Vector2( 157, 141 )
+position = Vector2( 157, 155 )
 z_index = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Menu1/Exit"]
@@ -176,9 +196,9 @@ texture = ExtResource( 5 )
 
 [node name="SoundText" type="RichTextLabel" parent="Menu1"]
 margin_left = 110.0
-margin_top = 112.0
+margin_top = 126.0
 margin_right = 200.0
-margin_bottom = 152.0
+margin_bottom = 166.0
 theme = ExtResource( 1 )
 text = "Music On"
 scroll_active = false
