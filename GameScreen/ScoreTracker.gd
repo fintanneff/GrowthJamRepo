@@ -178,3 +178,57 @@ func new_round():
 
 func playExplodeSound():
 	explodeSound.play()
+
+
+
+var scoreMatrix=[];
+func _ready():
+	#STOOPID DEBUG SHIT BEYOND THIS POINT
+	setUpScoreMatrix()
+	loadScoreMatrix()
+	print(scoreMatrix[9][1])
+	saveScoreMatrix()
+
+func dummyOutputText():
+	var file = File.new()
+	file.open("user://save_game.dat", File.WRITE)
+	file.store_string("1) jjjjjj 309485\n")
+	file.close()
+
+func setUpScoreMatrix():
+	for x in range(10):
+		scoreMatrix.append([])
+		scoreMatrix[x].append(x)
+		scoreMatrix[x].append("qwerty")
+		scoreMatrix[x].append(x * 10)
+
+func saveScoreMatrix():
+	var outString = ""
+	for x in range(10):
+		outString += str(scoreMatrix[x][0]) + " "
+		outString += str(scoreMatrix[x][1]) + " "
+		outString += str(scoreMatrix[x][2])
+		if (x < 9): 
+			outString += "\n"
+	var file = File.new()
+	file.open("user://save_game.dat", File.WRITE)
+	file.store_string(outString)
+	file.close()
+
+func loadScoreMatrix():
+	var file = File.new()
+	if (!file.file_exists("user://save_game.dat")):
+		return
+	file.open("user://save_game.dat", File.READ)
+	var content = file.get_as_text()
+	file.close()
+	var inputData = content.split("\n")
+	for x in range(10):
+		var words = inputData[x].split(" ")
+		print(inputData[x])
+		for word in words:
+			print(word)
+		scoreMatrix[x][0] = int(words[0])
+		scoreMatrix[x][1] = str(words[1])
+		scoreMatrix[x][2] = int(words[2])
+		print("---------")
