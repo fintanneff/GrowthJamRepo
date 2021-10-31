@@ -137,7 +137,7 @@ func cursorPress():
 			menu1.visible = false
 			menu2.visible = true
 		if(menuNum == 1):
-			print("GO TO THE SCORE SCREEN")
+			get_tree().change_scene("res://Score/HighScore.tscn")
 		if(menuNum == 2):
 			get_tree().change_scene("res://Credits/Credits.tscn")
 		if (menuNum == 3):

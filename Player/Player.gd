@@ -176,7 +176,7 @@ func _physics_process(delta):
 			ScreenFader.set_ifade(0)
 			get_tree().change_scene("res://TitleScreen/TitleScreen.tscn")
 
-
+#---------------- THIS IS WHERE WE DIE -------------------
 func _on_Area2D_body_entered(body):
 	for i in get_parent().get_children():
 		if i.has_method("death_react"):
@@ -187,8 +187,12 @@ func _on_Area2D_body_entered(body):
 	corpse.transform.origin = transform.origin
 	get_parent().add_child(corpse)
 	queue_free()
-	ScreenFader.set_ifade(0.7)
 	ScoreTracker.player_dead = true
-	var newtext = gameovertext.instance()
-	get_parent().add_child(newtext)
-	pass
+	var rank = ScoreTracker.getScoreRanking()
+	if (rank == -1):
+		ScreenFader.set_ifade(0.7)
+		var newtext = gameovertext.instance()
+		get_parent().add_child(newtext)
+	else:
+		print("RANKING: "+str(rank))
+		ScoreTracker.getReadyToGoToScoreInput()

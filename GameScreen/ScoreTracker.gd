@@ -191,6 +191,16 @@ func _ready():
 	print(scoreMatrix[9][1])
 	saveScoreMatrix()
 
+var scoreToReplaceWith = -1
+var rankToReplace = -1
+func getReadyToGoToScoreInput():
+	yield(get_tree().create_timer(2.0), "timeout")
+	scoreToReplaceWith = score
+	rankToReplace = getScoreRanking()
+	print(rankToReplace)
+	ScoreTracker.replaceRankNoName()
+	get_tree().change_scene("res://Score/ScoreInput.tscn")
+
 func dummyOutputText():
 	var file = File.new()
 	file.open("user://save_game.dat", File.WRITE)
@@ -200,9 +210,19 @@ func dummyOutputText():
 func setUpScoreMatrix():
 	for x in range(10):
 		scoreMatrix.append([])
-		scoreMatrix[x].append(x)
+		scoreMatrix[x].append(x+1)
 		scoreMatrix[x].append("qwerty")
-		scoreMatrix[x].append(x * 10)
+		scoreMatrix[x].append(0)
+
+func scoreMatrixToString():
+	var outString = ""
+	for x in range(10):
+		outString += str(scoreMatrix[x][0]) + " "
+		outString += str(scoreMatrix[x][1]) + " "
+		outString += str(scoreMatrix[x][2])
+		if (x < 9): 
+			outString += "\n"
+	return outString
 
 func saveScoreMatrix():
 	var outString = ""
@@ -234,3 +254,25 @@ func loadScoreMatrix():
 		scoreMatrix[x][1] = str(words[1])
 		scoreMatrix[x][2] = int(words[2])
 		print("---------")
+
+func getScoreRanking():
+	var result = -1 #Returns -1 if no high score
+	for x in range(10):
+		if (scoreMatrix[x][2] < score):
+			result = x
+			break
+	return result
+
+func replaceRankNoName():
+	var indexToReplace = getScoreRanking()
+	if (indexToReplace == -1):
+		return
+	var worstRank = 9
+	var bestRank = indexToReplace
+	while (worstRank > bestRank):
+		scoreMatrix[worstRank][1] = scoreMatrix[worstRank-1][1]
+		scoreMatrix[worstRank][2] = scoreMatrix[worstRank-1][2]
+		worstRank -= 1
+	scoreMatrix[indexToReplace][1] = "______"
+	scoreMatrix[indexToReplace][2] = score
+	saveScoreMatrix()
