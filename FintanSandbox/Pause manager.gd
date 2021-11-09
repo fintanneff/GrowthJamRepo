@@ -14,7 +14,8 @@ func _input(event):
 		if(ScoreTracker.player_dead != true && get_tree().get_current_scene().get_name() == "Main"):
 			get_tree().paused = !get_tree().paused
 			
-
+	if event.is_action_pressed("QuitGame"):
+			get_tree().quit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
