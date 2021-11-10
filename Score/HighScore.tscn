@@ -8,7 +8,7 @@
 [ext_resource path="res://TitleScreen/text.tres" type="Theme" id=6]
 [ext_resource path="res://TitleScreen/SpriteScroll.gd" type="Script" id=7]
 
-[node name="TitleScreen" type="Node2D"]
+[node name="HIGHSCORE" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 z_index = -10
@@ -46,3 +46,4 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+loadScores = true

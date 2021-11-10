@@ -8,7 +8,7 @@
 [ext_resource path="res://GameScreen/Rightbord.png" type="Texture" id=10]
 [ext_resource path="res://GameScreen/newUpDownBord.png" type="Texture" id=11]
 
-[node name="TitleScreen" type="Node2D"]
+[node name="CREDIT" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 z_index = -10

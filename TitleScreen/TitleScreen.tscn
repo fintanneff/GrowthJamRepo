@@ -234,7 +234,7 @@ __meta__ = {
 }
 
 [node name="classic_vs_modern" type="Sprite" parent="Menu2"]
-position = Vector2( 128, 102 )
+position = Vector2( 128, 111 )
 texture = ExtResource( 15 )
 hframes = 2
 

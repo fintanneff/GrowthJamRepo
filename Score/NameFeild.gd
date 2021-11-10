@@ -11,8 +11,10 @@ func _physics_process(delta):
 		flick(1)
 	if(Input.is_action_just_pressed("ui_down") || Input.is_action_just_pressed("ui_dpaddown")):
 		flick(-1)
-	if (Input.is_action_just_pressed("ui_hold") || Input.is_action_just_pressed("ui_Adown")):
+	if (Input.is_action_just_pressed("ui_Xleft")):
 		nextChar()
+	if (Input.is_action_just_pressed("ui_Yup")):
+		clearAll()
 
 func flick(number):
 	currentSelection += number
@@ -31,6 +33,12 @@ func nextChar():
 		ScoreTracker.scoreMatrix[ScoreTracker.rankToReplace][1] = text
 		ScoreTracker.saveScoreMatrix()
 		get_tree().change_scene("res://TitleScreen/TitleScreen.tscn")
+
+func clearAll():
+	text = "______"
+	currentChar = 0
+	currentSelection = 0
+	replaceCurrentChar()
 
 func replaceCurrentChar():
 	var theChar = "A"

@@ -40,10 +40,12 @@ func menu_main():
 		menuNum -= 1
 		if (menuNum < 0):
 			menuNum = 4
+		print(menuNum)
 	if(Input.is_action_just_pressed("ui_down") || Input.is_action_just_pressed("ui_dpaddown")):
 		menuNum += 1
 		if(menuNum > 4):
 			menuNum = 0
+		print(menuNum)
 	if(menuNum == 0):
 		iPos = gamePos
 	elif(menuNum == 1):
@@ -75,10 +77,12 @@ func menu_control():
 		menuNum -= 1
 		if (menuNum < 0):
 			menuNum = 1
+		print(menuNum)
 	if(Input.is_action_just_pressed("ui_down") || Input.is_action_just_pressed("ui_dpaddown")):
 		menuNum += 1
 		if(menuNum > 1):
 			menuNum = 0
+		print(menuNum)
 	if(menuNum == 0):
 		iPos = classicControlPos
 		control_display.frame = 0
@@ -136,11 +140,14 @@ func cursorPress():
 			menustate = 1
 			menu1.visible = false
 			menu2.visible = true
-		if(menuNum == 1):
+			menuNum = 1
+		elif(menuNum == 1):
 			get_tree().change_scene("res://Score/HighScore.tscn")
-		if(menuNum == 2):
+			print("GOING TO HIGHSCORE")
+		elif(menuNum == 2):
 			get_tree().change_scene("res://Credits/Credits.tscn")
-		if (menuNum == 3):
+			print("GOING TO CREDS")
+		elif (menuNum == 3):
 			if (soundText.text == "Music On"):
 				ScoreTracker.game_music_mode = false
 				soundText.text = "Music Off"

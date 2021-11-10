@@ -1,9 +1,10 @@
 extends RichTextLabel
-
+export(bool) var loadScores = false
 
 func _ready():
-	var boardText = ScoreTracker.scoreMatrixToString()
-	text = boardText
+	if (loadScores):
+		var boardText = ScoreTracker.scoreMatrixToString()
+		text = boardText
 
 func _physics_process(delta):
 	if (Input.is_action_just_pressed("ui_cancel") || margin_top < -200):
