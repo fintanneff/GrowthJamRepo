@@ -6,7 +6,12 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+<<<<<<< Updated upstream
 	pass # Replace with function body.
+=======
+	get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (true;) else Window.MODE_WINDOWED
+	
+>>>>>>> Stashed changes
 func _input(event):
 	
 	if event.is_action_pressed("Pause"):

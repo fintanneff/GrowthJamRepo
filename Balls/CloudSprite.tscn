@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Balls/corpse.gd" type="Script" id=1]
-[ext_resource path="res://Balls/Sprites/smallpop-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://Balls/Sprites/smallpop-Sheet.png" type="Texture2D" id=2]
 
-[node name="CloudSprite" type="Sprite"]
+[node name="CloudSprite" type="Sprite2D"]
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 hframes = 2

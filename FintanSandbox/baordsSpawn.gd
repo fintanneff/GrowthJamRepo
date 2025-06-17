@@ -1,8 +1,8 @@
-extends Sprite
+extends Sprite2D
 
 var done = false
 var starty
-export(int) var score_limit
+@export var score_limit: int
 
 func _ready():
 	ScoreTracker.updatable.push_front(self)
@@ -11,7 +11,7 @@ func _ready():
 	modulate.a = 0
 	
 	
-	var roll = int(rand_range(0,4))
+	var roll = int(randf_range(0,4))
 	print (roll)
 	
 	frame = roll

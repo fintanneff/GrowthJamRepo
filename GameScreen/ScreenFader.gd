@@ -1,11 +1,11 @@
-extends Sprite
+extends Sprite2D
 
 var ifade = 0
 
-onready var lscreen = $loadscreen
-onready var fscreen = $fadescreen
-onready var animplayer = $AnimationPlayer
-onready var zoomysound = $zoomout
+@onready var lscreen = $loadscreen
+@onready var fscreen = $fadescreen
+@onready var animplayer = $AnimationPlayer
+@onready var zoomysound = $zoomout
 
 func _ready():
 	lscreen.scale = Vector2.ZERO

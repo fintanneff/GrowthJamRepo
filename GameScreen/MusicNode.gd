@@ -1,12 +1,12 @@
 extends Node2D
 
-onready var drum = $Drum
+@onready var drum = $Drum
 var drum_ivolume = -80
-onready var bass = $Bass
+@onready var bass = $Bass
 var bass_ivolume = -80
-onready var echo = $Echo
+@onready var echo = $Echo
 var echo_ivolume = -80
-onready var ice = $Ice
+@onready var ice = $Ice
 var ice_ivolume = -80
 
 func _ready():

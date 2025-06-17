@@ -3,7 +3,7 @@ extends Area2D
 var vel = Vector2.ZERO
 var rot = 0.0
 
-onready var hit = $Hit
+@onready var hit = $Hit
 
 func _physics_process(delta):
 	if (transform.origin.x > 256 || transform.origin.x < 0):

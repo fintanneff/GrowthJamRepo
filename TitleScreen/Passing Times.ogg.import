@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/Passing Times.ogg-816dd5aab4d93c3f963fc78d59acbf81.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c1dx8mqd66upl"
+path="res://.godot/imported/Passing Times.ogg-816dd5aab4d93c3f963fc78d59acbf81.oggvorbisstr"
 
 [deps]
 
 source_file="res://TitleScreen/Passing Times.ogg"
-dest_files=[ "res://.import/Passing Times.ogg-816dd5aab4d93c3f963fc78d59acbf81.oggstr" ]
+dest_files=["res://.godot/imported/Passing Times.ogg-816dd5aab4d93c3f963fc78d59acbf81.oggvorbisstr"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

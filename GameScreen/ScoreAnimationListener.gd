@@ -1,9 +1,9 @@
 extends Node2D
 
-onready var anim = $AnimationPlayer
+@onready var anim = $AnimationPlayer
 var done = false
-export(int) var score_limit
-export(String) var anim_name
+@export var score_limit: int
+@export var anim_name: String
 
 func _ready():
 	ScoreTracker.updatable.push_front(self)

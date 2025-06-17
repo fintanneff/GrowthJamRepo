@@ -1,8 +1,8 @@
-extends Sprite
+extends Sprite2D
 
 var done = false
 var starty
-export(int) var score_limit
+@export var score_limit: int
 
 func _ready():
 	ScoreTracker.updatable.push_front(self)

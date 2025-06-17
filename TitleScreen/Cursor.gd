@@ -1,28 +1,28 @@
-extends Sprite
+extends Sprite2D
 
 var iPos = Vector2.ZERO
 var menuNum = 0
 
 var menustate = 0
 
-onready var menu1 = get_parent().get_node("Menu1")
-onready var menu2 = get_parent().get_node("Menu2")
-onready var control_display = get_parent().get_node("Menu2").get_node("classic_vs_modern")
-onready var menuMusic = get_parent().get_node("AudioStreamPlayer")
-onready var soundText = get_parent().get_node("Menu1").get_node("SoundText")
+@onready var menu1 = get_parent().get_node("Menu1")
+@onready var menu2 = get_parent().get_node("Menu2")
+@onready var control_display = get_parent().get_node("Menu2").get_node("classic_vs_modern")
+@onready var menuMusic = get_parent().get_node("AudioStreamPlayer")
+@onready var soundText = get_parent().get_node("Menu1").get_node("SoundText")
 
-onready var menuSelect = get_parent().get_node("select")
-onready var menuMove = get_parent().get_node("move")
-onready var zoomin = get_parent().get_node("zoomin")
+@onready var menuSelect = get_parent().get_node("select")
+@onready var menuMove = get_parent().get_node("move")
+@onready var zoomin = get_parent().get_node("zoomin")
 
-export (Vector2) var gamePos
-export (Vector2) var highScorePos
-export (Vector2) var creditPos
-export (Vector2) var soundPos
-export (Vector2) var exitPos
+@export var gamePos: Vector2
+@export var highScorePos: Vector2
+@export var creditPos: Vector2
+@export var soundPos: Vector2
+@export var exitPos: Vector2
 
-export (Vector2) var classicControlPos
-export (Vector2) var modernControlPos
+@export var classicControlPos: Vector2
+@export var modernControlPos: Vector2
 
 var animtimer = 30
 var waittimertickdown = false
@@ -136,11 +136,22 @@ func cursorPress():
 			menustate = 1
 			menu1.visible = false
 			menu2.visible = true
+<<<<<<< Updated upstream
 		if(menuNum == 1):
 			get_tree().change_scene("res://Score/HighScore.tscn")
 		if(menuNum == 2):
 			get_tree().change_scene("res://Credits/Credits.tscn")
 		if (menuNum == 3):
+=======
+			menuNum = 1
+		elif(menuNum == 1):
+			get_tree().change_scene_to_file("res://Score/HighScore.tscn")
+			print("GOING TO HIGHSCORE")
+		elif(menuNum == 2):
+			get_tree().change_scene_to_file("res://Credits/Credits.tscn")
+			print("GOING TO CREDS")
+		elif (menuNum == 3):
+>>>>>>> Stashed changes
 			if (soundText.text == "Music On"):
 				ScoreTracker.game_music_mode = false
 				soundText.text = "Music Off"
@@ -169,8 +180,7 @@ func timerEnd():
 	ScreenFader.play_zoomy_sound()
 	if(menustate == 1):
 		ScreenFader.anim_into_game()
-		get_tree().change_scene("res://FintanSandbox/FintanTestScene.tscn")
+		get_tree().change_scene_to_file("res://FintanSandbox/FintanTestScene.tscn")
 	else:
 		ScreenFader.anim_into_game()
-		get_tree().change_scene("res://FintanSandbox/FintanTestScene.tscn")
-
+		get_tree().change_scene_to_file("res://FintanSandbox/FintanTestScene.tscn")

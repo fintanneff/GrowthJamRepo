@@ -1,6 +1,6 @@
 extends Node2D
 
-export(int) var score_limit
+@export var score_limit: int
 
 func _ready():
 	ScoreTracker.updatable.push_front(self)
