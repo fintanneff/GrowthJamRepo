@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://b278c4tvmknuu"
+path="res://.godot/imported/text.fnt-433e0eba47f0b5f0f4fb3561c452aab7.fontdata"
+
+[deps]
+
+source_file="res://TitleScreen/text.fnt"
+dest_files=["res://.godot/imported/text.fnt-433e0eba47f0b5f0f4fb3561c452aab7.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

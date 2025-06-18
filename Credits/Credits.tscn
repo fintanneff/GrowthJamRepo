@@ -1,22 +1,22 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://TitleScreen/text.tres" type="Theme" id=1]
-[ext_resource path="res://TitleScreen/polkadot.png" type="Texture" id=2]
+[ext_resource path="res://TitleScreen/polkadot.png" type="Texture2D" id=2]
 [ext_resource path="res://TitleScreen/SpriteScroll.gd" type="Script" id=3]
 [ext_resource path="res://Credits/CredText.gd" type="Script" id=4]
-[ext_resource path="res://GameScreen/leftbord.png" type="Texture" id=9]
-[ext_resource path="res://GameScreen/Rightbord.png" type="Texture" id=10]
-[ext_resource path="res://GameScreen/newUpDownBord.png" type="Texture" id=11]
+[ext_resource path="res://GameScreen/leftbord.png" type="Texture2D" id=9]
+[ext_resource path="res://GameScreen/Rightbord.png" type="Texture2D" id=10]
+[ext_resource path="res://GameScreen/newUpDownBord.png" type="Texture2D" id=11]
 
 [node name="CREDIT" type="Node2D"]
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -10
 texture = ExtResource( 2 )
 centered = false
 script = ExtResource( 3 )
 
-[node name="newUpDownBord" type="Sprite" parent="."]
+[node name="newUpDownBord" type="Sprite2D" parent="."]
 position = Vector2( -22, -8 )
 z_index = 6
 texture = ExtResource( 11 )
@@ -25,21 +25,21 @@ centered = false
 [node name="SideBorderGraphic" type="Node2D" parent="."]
 z_index = 10
 
-[node name="leftbord" type="Sprite" parent="SideBorderGraphic"]
+[node name="leftbord" type="Sprite2D" parent="SideBorderGraphic"]
 position = Vector2( 128, 92 )
 z_index = 7
 texture = ExtResource( 9 )
 
-[node name="Rightbord" type="Sprite" parent="SideBorderGraphic"]
+[node name="Rightbord" type="Sprite2D" parent="SideBorderGraphic"]
 position = Vector2( 128, 92 )
 z_index = 7
 texture = ExtResource( 10 )
 
 [node name="CredText" type="RichTextLabel" parent="."]
-margin_left = 23.0
-margin_top = 169.0
-margin_right = 235.0
-margin_bottom = 579.0
+offset_left = 23.0
+offset_top = 169.0
+offset_right = 235.0
+offset_bottom = 579.0
 theme = ExtResource( 1 )
 text = "Developed by Kristofer Camp and Fintan Neff
 

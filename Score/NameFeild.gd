@@ -32,7 +32,7 @@ func nextChar():
 	else:
 		ScoreTracker.scoreMatrix[ScoreTracker.rankToReplace][1] = text
 		ScoreTracker.saveScoreMatrix()
-		get_tree().change_scene("res://TitleScreen/TitleScreen.tscn")
+		get_tree().change_scene_to_file("res://TitleScreen/TitleScreen.tscn")
 
 func clearAll():
 	text = "______"

@@ -6,7 +6,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	OS.window_fullscreen = true;
+	get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (true;) else Window.MODE_WINDOWED
 	
 func _input(event):
 	

@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 # Declare member variables here. Examples:
 var moveSpeed = 1
@@ -9,15 +9,15 @@ var inputVectorDPAD = Vector2(0,0)
 var inputVectorBUTTONS = Vector2(0,0)
 var midshot = false
 
-onready var animator = $AnimationPlayer
-onready var sprite = $Sprite
+@onready var animator = $AnimationPlayer
+@onready var sprite = $Sprite2D
 
-onready var shootsoundplayer = $ShootSoundPlayer
+@onready var shootsoundplayer = $ShootSoundPlayer
 
-onready var bullet = preload("res://Bullet/Bullet.tscn")
-onready var corpse = preload("res://Bullet/Bullet.tscn")
-onready var gameovertext = preload("res://GameScreen/GameOverText.tscn")
-onready var goobcorpse = preload("res://Player/GoobCorpse.tscn")
+@onready var bullet = preload("res://Bullet/Bullet.tscn")
+@onready var corpse = preload("res://Bullet/Bullet.tscn")
+@onready var gameovertext = preload("res://GameScreen/GameOverText.tscn")
+@onready var goobcorpse = preload("res://Player/GoobCorpse.tscn")
 
 var autofire_timer = -1
 
@@ -89,7 +89,7 @@ func input_move_wasd():
 		if (autofire_timer < 1):
 			autofire_timer = 10
 			shootsoundplayer.play()
-			var newbullet = bullet.instance()
+			var newbullet = bullet.instantiate()
 			newbullet.transform.origin.x = transform.origin.x
 			newbullet.transform.origin.y = transform.origin.y
 			newbullet.angleshot(angle.normalized() * 3, 0)
@@ -137,7 +137,7 @@ func input_move_arrow():
 	#Shooting
 	if (Input.is_action_just_pressed("ui_shoot") || Input.is_action_just_pressed("ui_Xleft")):
 		shootsoundplayer.play()
-		var newbullet = bullet.instance()
+		var newbullet = bullet.instantiate()
 		newbullet.transform.origin.x = transform.origin.x
 		newbullet.transform.origin.y = transform.origin.y
 		newbullet.angleshot(angle.normalized() * 3, 0)
@@ -174,7 +174,7 @@ func _physics_process(delta):
 			ScoreTracker.set_me_up()
 			ScreenFader.hard_set_fade(0.7)
 			ScreenFader.set_ifade(0)
-			get_tree().change_scene("res://TitleScreen/TitleScreen.tscn")
+			get_tree().change_scene_to_file("res://TitleScreen/TitleScreen.tscn")
 
 #---------------- THIS IS WHERE WE DIE -------------------
 func _on_Area2D_body_entered(body):
@@ -183,7 +183,7 @@ func _on_Area2D_body_entered(body):
 			i.death_react()
 	#ScoreTracker.set_me_up()
 	#get_tree().reload_current_scene()
-	var corpse = goobcorpse.instance()
+	var corpse = goobcorpse.instantiate()
 	corpse.transform.origin = transform.origin
 	get_parent().add_child(corpse)
 	queue_free()
@@ -191,7 +191,7 @@ func _on_Area2D_body_entered(body):
 	var rank = ScoreTracker.getScoreRanking()
 	if (rank == -1):
 		ScreenFader.set_ifade(0.7)
-		var newtext = gameovertext.instance()
+		var newtext = gameovertext.instantiate()
 		get_parent().add_child(newtext)
 	else:
 		print("RANKING: "+str(rank))

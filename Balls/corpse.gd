@@ -1,4 +1,4 @@
-extends Sprite
+extends Sprite2D
 
 var timer = 5
 var vel = Vector2.ZERO

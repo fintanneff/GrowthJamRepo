@@ -1,32 +1,32 @@
 extends RigidBody2D
 
-export(int) var graphic_pixel_size
-export(bool) var does_explode
-export(float) var speed_min
-export(float) var speed_max
-export(int) var point_value
-export(int) var point_frame
+@export var graphic_pixel_size: int
+@export var does_explode: bool
+@export var speed_min: float
+@export var speed_max: float
+@export var point_value: int
+@export var point_frame: int
 
-export(Vector2) var pop_cloud_size
-export(float) var pop_cloud_duration
-export(float) var pop_cloud_speed
-export(Vector2) var pop_bang_size
+@export var pop_cloud_size: Vector2
+@export var pop_cloud_duration: float
+@export var pop_cloud_speed: float
+@export var pop_bang_size: Vector2
 
-onready var ballgraphic = $TestBall
-onready var cshape = $CShape
-onready var inflatesound = $InflateSound
-onready var bzone = get_node("BulletZone/CollisionShape2D")
+@onready var ballgraphic = $TestBall
+@onready var cshape = $CShape
+@onready var inflatesound = $InflateSound
+@onready var bzone = get_node("BulletZone/CollisionShape2D")
 var iscale = Vector2.ZERO
 
-onready var pop_object = preload("res://Balls/Small_popsprite.tscn")
-onready var pop_cloud = preload("res://Balls/CloudSprite.tscn")
-onready var pointsprite = preload("res://GameScreen/PointNumber.tscn")
+@onready var pop_object = preload("res://Balls/Small_popsprite.tscn")
+@onready var pop_cloud = preload("res://Balls/CloudSprite.tscn")
+@onready var pointsprite = preload("res://GameScreen/PointNumber.tscn")
 
 func _ready():
 	call_deferred("set_me_up")
 	
 func set_me_up():
-	linear_velocity.x = rand_range(-200, 200)
+	linear_velocity.x = randf_range(-200, 200)
 	linear_velocity.y = 100
 	iscale = ballgraphic.scale
 	cshape.scale = ballgraphic.scale
@@ -81,19 +81,19 @@ func react_to_star_explode():
 	onpop()
 
 func onpop():
-	var p = pointsprite.instance()
+	var p = pointsprite.instantiate()
 	p.transform.origin = transform.origin
 	p.frame = point_frame
 	get_parent().add_child(p)
 	ScoreTracker.playExplodeSound()
 	ScoreTracker.pop_check(self)
 	ScoreTracker.increase_score(point_value)
-	var x = pop_object.instance()
+	var x = pop_object.instantiate()
 	x.transform.origin = transform.origin
 	x.angle(Vector2.ZERO, 0, 15, pop_bang_size)
 	get_parent().add_child(x)
 	for i in range(6):
-		var newcloud = pop_cloud.instance()
+		var newcloud = pop_cloud.instantiate()
 		newcloud.transform.origin = transform.origin
 		newcloud.angle(
 			Vector2.RIGHT*pop_cloud_speed, 

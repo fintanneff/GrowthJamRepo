@@ -22,11 +22,11 @@ var player_dead = false
 var player_control_mode = false
 var game_music_mode = true
 
-onready var small_balloon = preload("res://Balls/SmallBall.tscn")
-onready var med_balloon = preload("res://Balls/BullyBall.tscn")
-onready var large_balloon = preload("res://Balls/StarBall.tscn")
+@onready var small_balloon = preload("res://Balls/SmallBall.tscn")
+@onready var med_balloon = preload("res://Balls/BullyBall.tscn")
+@onready var large_balloon = preload("res://Balls/StarBall.tscn")
 
-onready var explodeSound = $ExplodePlayer
+@onready var explodeSound = $ExplodePlayer
 
 var internal_d12 = 1
 
@@ -49,7 +49,7 @@ func set_me_up():
 	player_dead = false
 
 func roll_internal_d12():
-	internal_d12 = int(rand_range(1, 12))
+	internal_d12 = int(randf_range(1, 12))
 
 func _physics_process(delta):
 	if (misc_ball_countdown != -1):
@@ -141,20 +141,20 @@ func misc_ball_spawn():
 	roll_internal_d12()
 	if (internal_d12 >= 10):
 		if (score >= 5000):
-			newball = large_balloon.instance()
+			newball = large_balloon.instantiate()
 		else:
-			newball = med_balloon.instance()
+			newball = med_balloon.instantiate()
 	elif (internal_d12 >= 7):
 		if (score >= 500):
-			newball = med_balloon.instance()
+			newball = med_balloon.instantiate()
 		else:
-			newball = small_balloon.instance()
+			newball = small_balloon.instantiate()
 	else:
-		newball = small_balloon.instance()
+		newball = small_balloon.instantiate()
 	var worked = spawn_check(newball, false)
 	if (worked):
-		newball.transform.origin.x = rand_range(32, 224)
-		newball.transform.origin.y = rand_range(-16, -64)
+		newball.transform.origin.x = randf_range(32, 224)
+		newball.transform.origin.y = randf_range(-16, -64)
 		get_tree().get_root().get_node("Main").call_deferred("add_child", newball)
 
 #Called every new round (when all balloons have been popped)
@@ -165,15 +165,15 @@ func new_round():
 		roll_internal_d12()
 		if (internal_d12 >= 8):
 			if (score >= 10000):
-				newball = med_balloon.instance()
+				newball = med_balloon.instantiate()
 			else:
-				newball = small_balloon.instance()
+				newball = small_balloon.instantiate()
 		else:
-			newball = small_balloon.instance()
+			newball = small_balloon.instantiate()
 		var worked = spawn_check(newball, true)
 		if (worked):
-			newball.transform.origin.x = rand_range(32, 224)
-			newball.transform.origin.y = rand_range(-16, -64)
+			newball.transform.origin.x = randf_range(32, 224)
+			newball.transform.origin.y = randf_range(-16, -64)
 			get_tree().get_root().get_node("Main").call_deferred("add_child", newball)
 
 func playExplodeSound():
@@ -194,12 +194,12 @@ func _ready():
 var scoreToReplaceWith = -1
 var rankToReplace = -1
 func getReadyToGoToScoreInput():
-	yield(get_tree().create_timer(2.0), "timeout")
+	await get_tree().create_timer(2.0).timeout
 	scoreToReplaceWith = score
 	rankToReplace = getScoreRanking()
 	print(rankToReplace)
 	ScoreTracker.replaceRankNoName()
-	get_tree().change_scene("res://Score/ScoreInput.tscn")
+	get_tree().change_scene_to_file("res://Score/ScoreInput.tscn")
 
 func dummyOutputText():
 	var file = File.new()

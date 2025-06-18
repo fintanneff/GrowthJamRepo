@@ -1,11 +1,11 @@
-extends Sprite
+extends Sprite2D
 
 var vely = -2
-onready var bs = $based_sound
-onready var cs = $cringe_sound
+@onready var bs = $based_sound
+@onready var cs = $cringe_sound
 
 func _ready():
-	var roll = rand_range(0, 200)
+	var roll = randf_range(0, 200)
 	if (roll < 2):
 		bs.play()
 	else:

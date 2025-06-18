@@ -2,11 +2,11 @@
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Balls/BullyBall.tscn" type="PackedScene" id=2]
-[ext_resource path="res://GameScreen/clouds.png" type="Texture" id=3]
-[ext_resource path="res://GameScreen/newUpDownBord.png" type="Texture" id=4]
-[ext_resource path="res://FintanSandbox/Testing/Ground.png" type="Texture" id=5]
-[ext_resource path="res://GameScreen/NEWESTEST_SIDE.png" type="Texture" id=6]
-[ext_resource path="res://GameScreen/StarryDawn.png" type="Texture" id=7]
+[ext_resource path="res://GameScreen/clouds.png" type="Texture2D" id=3]
+[ext_resource path="res://GameScreen/newUpDownBord.png" type="Texture2D" id=4]
+[ext_resource path="res://FintanSandbox/Testing/Ground.png" type="Texture2D" id=5]
+[ext_resource path="res://GameScreen/NEWESTEST_SIDE.png" type="Texture2D" id=6]
+[ext_resource path="res://GameScreen/StarryDawn.png" type="Texture2D" id=7]
 [ext_resource path="res://Balls/StarBall.tscn" type="PackedScene" id=8]
 [ext_resource path="res://GameScreen/background_shit.tscn" type="PackedScene" id=9]
 
@@ -15,13 +15,13 @@ extents = Vector2( 244, 8 )
 
 [node name="Main" type="Node2D"]
 
-[node name="StarryDawn" type="Sprite" parent="."]
+[node name="StarryDawn" type="Sprite2D" parent="."]
 position = Vector2( -22, -8 )
 z_index = -20
 texture = ExtResource( 7 )
 centered = false
 
-[node name="clouds" type="Sprite" parent="."]
+[node name="clouds" type="Sprite2D" parent="."]
 position = Vector2( -22, -8 )
 z_index = -2
 texture = ExtResource( 3 )
@@ -29,142 +29,142 @@ centered = false
 
 [node name="Mockup" type="Node2D" parent="."]
 
-[node name="Ground" type="Sprite" parent="Mockup"]
+[node name="Ground" type="Sprite2D" parent="Mockup"]
 position = Vector2( 16, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground2" type="Sprite" parent="Mockup"]
+[node name="Ground2" type="Sprite2D" parent="Mockup"]
 position = Vector2( 24, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground3" type="Sprite" parent="Mockup"]
+[node name="Ground3" type="Sprite2D" parent="Mockup"]
 position = Vector2( 32, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground4" type="Sprite" parent="Mockup"]
+[node name="Ground4" type="Sprite2D" parent="Mockup"]
 position = Vector2( 40, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground5" type="Sprite" parent="Mockup"]
+[node name="Ground5" type="Sprite2D" parent="Mockup"]
 position = Vector2( 48, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground6" type="Sprite" parent="Mockup"]
+[node name="Ground6" type="Sprite2D" parent="Mockup"]
 position = Vector2( 56, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground7" type="Sprite" parent="Mockup"]
+[node name="Ground7" type="Sprite2D" parent="Mockup"]
 position = Vector2( 64, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground8" type="Sprite" parent="Mockup"]
+[node name="Ground8" type="Sprite2D" parent="Mockup"]
 position = Vector2( 72, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground9" type="Sprite" parent="Mockup"]
+[node name="Ground9" type="Sprite2D" parent="Mockup"]
 position = Vector2( 80, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground10" type="Sprite" parent="Mockup"]
+[node name="Ground10" type="Sprite2D" parent="Mockup"]
 position = Vector2( 88, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground11" type="Sprite" parent="Mockup"]
+[node name="Ground11" type="Sprite2D" parent="Mockup"]
 position = Vector2( 96, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground12" type="Sprite" parent="Mockup"]
+[node name="Ground12" type="Sprite2D" parent="Mockup"]
 position = Vector2( 104, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground13" type="Sprite" parent="Mockup"]
+[node name="Ground13" type="Sprite2D" parent="Mockup"]
 position = Vector2( 112, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground14" type="Sprite" parent="Mockup"]
+[node name="Ground14" type="Sprite2D" parent="Mockup"]
 position = Vector2( 120, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground15" type="Sprite" parent="Mockup"]
+[node name="Ground15" type="Sprite2D" parent="Mockup"]
 position = Vector2( 128, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground16" type="Sprite" parent="Mockup"]
+[node name="Ground16" type="Sprite2D" parent="Mockup"]
 position = Vector2( 136, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground17" type="Sprite" parent="Mockup"]
+[node name="Ground17" type="Sprite2D" parent="Mockup"]
 position = Vector2( 144, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground18" type="Sprite" parent="Mockup"]
+[node name="Ground18" type="Sprite2D" parent="Mockup"]
 position = Vector2( 152, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground19" type="Sprite" parent="Mockup"]
+[node name="Ground19" type="Sprite2D" parent="Mockup"]
 position = Vector2( 160, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground20" type="Sprite" parent="Mockup"]
+[node name="Ground20" type="Sprite2D" parent="Mockup"]
 position = Vector2( 168, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground21" type="Sprite" parent="Mockup"]
+[node name="Ground21" type="Sprite2D" parent="Mockup"]
 position = Vector2( 176, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground22" type="Sprite" parent="Mockup"]
+[node name="Ground22" type="Sprite2D" parent="Mockup"]
 position = Vector2( 184, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground23" type="Sprite" parent="Mockup"]
+[node name="Ground23" type="Sprite2D" parent="Mockup"]
 position = Vector2( 192, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground24" type="Sprite" parent="Mockup"]
+[node name="Ground24" type="Sprite2D" parent="Mockup"]
 position = Vector2( 200, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground25" type="Sprite" parent="Mockup"]
+[node name="Ground25" type="Sprite2D" parent="Mockup"]
 position = Vector2( 208, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground26" type="Sprite" parent="Mockup"]
+[node name="Ground26" type="Sprite2D" parent="Mockup"]
 position = Vector2( 216, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground27" type="Sprite" parent="Mockup"]
+[node name="Ground27" type="Sprite2D" parent="Mockup"]
 position = Vector2( 224, 160 )
 texture = ExtResource( 5 )
 centered = false
 
-[node name="Ground28" type="Sprite" parent="Mockup"]
+[node name="Ground28" type="Sprite2D" parent="Mockup"]
 position = Vector2( 232, 160 )
 texture = ExtResource( 5 )
 centered = false
@@ -221,13 +221,13 @@ position = Vector2( 172, -44 )
 [node name="BullyBall" parent="." instance=ExtResource( 8 )]
 position = Vector2( 83.3381, -29.1053 )
 
-[node name="NEWESTEST_SIDE" type="Sprite" parent="."]
+[node name="NEWESTEST_SIDE" type="Sprite2D" parent="."]
 position = Vector2( 129, 92 )
 z_index = 11
 z_as_relative = false
 texture = ExtResource( 6 )
 
-[node name="newUpDownBord" type="Sprite" parent="."]
+[node name="newUpDownBord" type="Sprite2D" parent="."]
 process_priority = 2
 position = Vector2( 130, 92 )
 z_index = 10

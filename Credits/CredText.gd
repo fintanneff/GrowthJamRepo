@@ -1,5 +1,5 @@
 extends RichTextLabel
-export(bool) var loadScores = false
+@export var loadScores: bool = false
 
 func _ready():
 	if (loadScores):
@@ -7,7 +7,7 @@ func _ready():
 		text = boardText
 
 func _physics_process(delta):
-	if (Input.is_action_just_pressed("ui_cancel") || margin_top < -200):
-		get_tree().change_scene("res://TitleScreen/TitleScreen.tscn")
+	if (Input.is_action_just_pressed("ui_cancel") || offset_top < -200):
+		get_tree().change_scene_to_file("res://TitleScreen/TitleScreen.tscn")
 	else:
-		margin_top -= 0.25
+		offset_top -= 0.25
