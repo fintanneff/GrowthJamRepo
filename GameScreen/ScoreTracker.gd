@@ -130,11 +130,11 @@ func spawn_check(b, part_of_round):
 func pop_check(b):
 	var bpos = current_round.find(b, 0)
 	if (bpos != -1):
-		current_round.remove(bpos)
+		current_round.remove_at(bpos)
 	else:
 		bpos = misc_balls.find(b, 0)
 		if (bpos != -1):
-			misc_balls.remove(bpos)
+			misc_balls.remove_at(bpos)
 	
 func misc_ball_spawn():
 	var newball
@@ -202,8 +202,8 @@ func getReadyToGoToScoreInput():
 	get_tree().change_scene_to_file("res://Score/ScoreInput.tscn")
 
 func dummyOutputText():
-	var file = File.new()
-	file.open("user://save_game.dat", File.WRITE)
+	
+	var file = FileAccess.open("user://save_game.dat", FileAccess.WRITE)
 	file.store_string("1) jjjjjj 309485\n")
 	file.close()
 
@@ -232,16 +232,16 @@ func saveScoreMatrix():
 		outString += str(scoreMatrix[x][2])
 		if (x < 9): 
 			outString += "\n"
-	var file = File.new()
-	file.open("user://save_game.dat", File.WRITE)
+	
+	var file = FileAccess.open("user://save_game.dat", FileAccess.WRITE)
 	file.store_string(outString)
 	file.close()
 
 func loadScoreMatrix():
-	var file = File.new()
-	if (!file.file_exists("user://save_game.dat")):
+
+	if (!FileAccess.file_exists("user://save_game.dat")):
 		return
-	file.open("user://save_game.dat", File.READ)
+	var file = FileAccess.open("user://save_game.dat", FileAccess.READ)
 	var content = file.get_as_text()
 	file.close()
 	var inputData = content.split("\n")

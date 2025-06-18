@@ -1,49 +1,48 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://cl26uj2go60km"]
 
-[ext_resource path="res://TitleScreen/polkadot.png" type="Texture2D" id=1]
-[ext_resource path="res://GameScreen/newUpDownBord.png" type="Texture2D" id=2]
-[ext_resource path="res://GameScreen/leftbord.png" type="Texture2D" id=3]
-[ext_resource path="res://GameScreen/Rightbord.png" type="Texture2D" id=4]
-[ext_resource path="res://Credits/CredText.gd" type="Script" id=5]
-[ext_resource path="res://TitleScreen/text.tres" type="Theme" id=6]
-[ext_resource path="res://TitleScreen/SpriteScroll.gd" type="Script" id=7]
+[ext_resource type="Texture2D" uid="uid://btmg26aqvfx88" path="res://TitleScreen/polkadot.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://d2eiilrs7qckb" path="res://GameScreen/newUpDownBord.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dgrmm282gn60d" path="res://GameScreen/leftbord.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cphwcv2yvf7fd" path="res://GameScreen/Rightbord.png" id="4"]
+[ext_resource type="Script" uid="uid://wixnabv3h15i" path="res://Credits/CredText.gd" id="5"]
+[ext_resource type="Theme" path="res://TitleScreen/text.tres" id="6"]
+[ext_resource type="Script" uid="uid://dje2t8p564skq" path="res://TitleScreen/SpriteScroll.gd" id="7"]
 
 [node name="HIGHSCORE" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -10
-texture = ExtResource( 1 )
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("1")
 centered = false
-script = ExtResource( 7 )
+script = ExtResource("7")
 
 [node name="newUpDownBord" type="Sprite2D" parent="."]
-position = Vector2( -22, -8 )
 z_index = 6
-texture = ExtResource( 2 )
+position = Vector2(-22, -8)
+texture = ExtResource("2")
 centered = false
 
 [node name="SideBorderGraphic" type="Node2D" parent="."]
 z_index = 10
 
 [node name="leftbord" type="Sprite2D" parent="SideBorderGraphic"]
-position = Vector2( 128, 92 )
 z_index = 7
-texture = ExtResource( 3 )
+position = Vector2(128, 92)
+texture = ExtResource("3")
 
 [node name="Rightbord" type="Sprite2D" parent="SideBorderGraphic"]
-position = Vector2( 128, 92 )
 z_index = 7
-texture = ExtResource( 4 )
+position = Vector2(128, 92)
+texture = ExtResource("4")
 
 [node name="ScoreText" type="RichTextLabel" parent="."]
 offset_left = 23.0
 offset_top = 169.0
 offset_right = 235.0
 offset_bottom = 579.0
-theme = ExtResource( 6 )
+theme = ExtResource("6")
 scroll_active = false
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("5")
 loadScores = true

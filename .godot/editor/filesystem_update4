@@ -1,2 +1,12 @@
 res://default_env.tres
 res://TitleScreen/TitleScreen.tscn
+res://GameScreen/ScoreTracker.gd
+res://FintanSandbox/Pause manager.gd
+res://Score/HighScore.tscn
+res://Credits/Credits.tscn
+res://FintanSandbox/baordsSpawn.gd
+res://GameScreen/ScoreDestroyListener.gd
+res://GameScreen/ScoreFadeListener.gd
+res://GameScreen/GameOverText.gd
+res://GameScreen/MusicNode.gd
+res://TitleScreen/Cursor.gd

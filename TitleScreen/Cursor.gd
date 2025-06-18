@@ -180,4 +180,3 @@ func timerEnd():
 	else:
 		ScreenFader.anim_into_game()
 		get_tree().change_scene_to_file("res://FintanSandbox/FintanTestScene.tscn")
-

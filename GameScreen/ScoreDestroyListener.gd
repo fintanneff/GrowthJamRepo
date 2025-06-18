@@ -8,5 +8,5 @@ func _ready():
 func on_score_update(score):
 	if (score >= score_limit):
 		var pos = ScoreTracker.updatable.find(self)
-		ScoreTracker.updatable.remove(pos)
+		ScoreTracker.updatable.remove_at(pos)
 		queue_free()
